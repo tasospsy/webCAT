@@ -4,6 +4,7 @@ project:
   
 website:
   title: "webCAT"
+  favicon: images/favicon.png
   back-to-top-navigation: true
   page-footer: "Copyright 2025, "
   navbar:
