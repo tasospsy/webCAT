@@ -1,0 +1,356 @@
+---
+#title: "Step 3: Qualtrics Configuration"
+---
+
+In this step, we show you how to set up a basic Qualtrics test/survey and connect it to the test specifications from steps 1 and 2 of this tutorial. We use the Dutch-English vocabulary test of 36 dichotomous items as an example (<https://osf.io/ymh3d/files/sk9hx>), with the following specifications:
+
+|              |        |
+|--------------|--------|
+| Test name    | `TCAT` |
+| Personal key | `test` |
+
+It is a variable length CAT calibrated under a 2PL model. The stopping criterion is set to `0.33`meaning that the test will stop when the standard error of the latent trait estimate reaches 0.33 or lower.
+
+### Step 3.1 - Setup Block
+
+Enter the Qualtrics website and log in with your credentials.
+
+Go to **Home page** — **Create a new project** — **Survey** — and click **Get started.**
+
+Enter a Name for the Qualtrics project.
+
+::: callout-note
+The Qualtric project name is **not** the same as the Test name you specified on this tutorial.
+:::
+
+![](images/Screenshot%202025-12-02%20at%2008.00.42.png){fig-align="center" width="400"}
+
+Once you create a new project, select **Add a new question**.
+
+From the left panel, under **Question Type**, choose **Text entry** type of question.
+
+![](images/Screenshot%202025-12-02%20at%2008.02.33.png){#sc2 fig-align="center"}
+
+Change the question text to '**Enter Test/Survey name**'.
+
+![](images/Screenshot%202025-12-02%20at%2008.02.49.png){fig-align="center"}
+
+By clicking on the three dots menu on the right corner of the new question, select **Copy** to create a similar question type.
+
+![](images/Screenshot%202025-12-02%20at%2008.03.06.png){fig-align="center"}
+
+Change the question text to '**Enter key'** at the second question.
+
+![](images/Screenshot%202025-12-02%20at%2008.03.21.png){fig-align="center"}
+
+These two questions belong to a single block, which will be the first block in your test. This block is crucial, as it links the Qualtrics survey to the correct test specifications you set up in Steps 1 and 2.
+
+Rename the first **Block** as 'Setup' block, by changing the label above the first question.
+
+![](images/Screenshot%202025-12-02%20at%2008.03.59.png)
+
+Then, for the '**Enter Test/Survey Name'** question, select **Add requirements** and **Force response** under the **response Requirements** options on the left panel.
+
+Repeat for the '**Enter Key'** question.
+
+![](images/Screenshot%202025-12-02%20at%2008.04.png)
+
+Then, select '**Default choices**' from the options on the left panel. Enter the name of your test in the first question, and click '**Save**'. (For this tutorial paste `TCAT`)
+
+Then repeat the process for the second question, entering the personal key that was generated previously. (For this tutorial paste `test`)
+
+![](images/Screenshot%202025-12-19%20at%2007.54.45.png)
+
+![](images/Screenshot%202025-12-19%20at%2007.55.21.png)
+
+### Step 3.2 Introduction Block (*optional*)
+
+1.  Add a new block by selecting **Add Block**
+
+2.  Rename the new block as 'Intro'
+
+3.  Add new question to the block by selecting '**Add new question'**
+
+4.  and then '**Text / Graphic**' type
+
+![](images/Screenshot%202025-12-19%20at%2008.13.34.png)
+
+This does not serve as an actual question; rather, it displays all the necessary information for the test user. You can use it to introduce your test before item administration starts.
+
+::: callout-tip
+You can add new questions to the 'Intro' block. For example, you could add a single-choice question to ask for informed consent.
+:::
+
+![](images/Screenshot%202025-12-19%20at%2008.18.16.png)
+
+### Step 3.2 Extra Block (*optional*)
+
+Similarly, you can add an additional block, here labelled as 'Extra' block , with additional questions that you would like to appear before the actual CAT survey. These may be demographic or other personal questions.
+
+::: callout-note
+No CAT methods are configured for the ‘Extra’ bolck. All users will be asked the same questions.
+:::
+
+![](images/Screenshot%202026.png)
+
+In the example below, the 'Extra Block' consists of two questions: One is for gender and the other is for age.
+
+![](images/Screenshot%202025-12-19%20at%2008.32.59.png)
+
+### Step 3.3 CAT Initialization Block
+
+Similarly,
+
+1.  we add a new block,
+2.  rename it to 'init block'
+3.  add a new **Text / Entry** question type,
+4.  and enter the phrase 'Loading...' as question text.
+
+![](images/Screenshot%202025-12-02%20at%2008.08.08.png){fig-align="center"}
+
+For the 'Loading...' question, select the '**Javascript'** option from the left panel.
+
+![]()
+
+![](images/Screenshot%202025-12-02%20at%2008.08.16.png)
+
+A new window will appear as shown below.
+
+![](images/Screenshot%202025-12-02%20at%2008.10.10.png)
+
+Replace the default lines of code with the script below and click '**Save**':
+
+``` javascript
+Qualtrics.SurveyEngine.addOnload(function() {
+    // CALL
+    fetch("https://qualcat.duckdns.org/api/v0/init", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": "${q://QID2/ChoiceTextEntryValue}", // passwrd
+      "userid": "${e://Field/SessionID}", // username
+      "catName": "${q://QID1/ChoiceTextEntryValue}" // CAT name
+    },
+    body: JSON.stringify(answers)
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log("API returned:", data); // Debug
+    // Store the API result in Embedded Data
+    Qualtrics.SurveyEngine.setEmbeddedData("stop_crit", data.stop_crit);
+    Qualtrics.SurveyEngine.setEmbeddedData("next_q", data.next_q);
+    Qualtrics.SurveyEngine.setEmbeddedData("item_num", data.item_num);
+    var arr = data.choices;
+    for (var i = 0; i < arr.length; i++) {
+        var varName = "choice" + (i + 1);
+        Qualtrics.SurveyEngine.setEmbeddedData(varName, arr[i]);
+    }
+  })
+  .catch(err => console.error("API error:", err));
+
+    //Hides the next button and displays the question
+    //for # seconds before moving to the next page
+    // from Qualtrics documentation
+    this.hideNextButton();
+    var that = this;
+    (function(){that.clickNextButton();}).delay(4);
+});
+```
+
+### Step 3.4 Question Block
+
+Add a new block, labelled as 'Question Block'.
+
+Then, add a **Multiple choice** question type.
+
+![](images/Screenshot%202025-12-02%20at%2008.12.25.png)
+
+-   Select **Choices** from the left panel and choose the number of response options for your test under **Number of choices**. Here is set to 4.
+
+-   Replace the 'Click to write the question text' with this line `${e://Field/next_q}`
+
+-   Replace the 'Click to write Choice 1' with `${e://Field/choice1},`'Click to write Choice 2' with `${e://Field/choice2}` . Repeat this process for each of the available choices.
+
+![](images/Screenshot%202025-12-02%20at%2008.13.19.png)
+
+Next, click the '**Javascript**' button on the left panel, erase the default script, paste the following and click '**Save**':
+
+``` javascript
+Qualtrics.SurveyEngine.addOnReady(function() {
+
+    // 1. clear Qualtrics internal answer
+    this.setChoiceValue("", false);
+
+    // 2. clear any recorded choice values
+    var choices = this.getChoices();
+    for (var i = 0; i < choices.length; i++) {
+        this.setChoiceValue(choices[i], false);
+    }
+
+    // 3. clear UI radios
+    jQuery("#" + this.questionId + " input[type='radio']").prop("checked", false);
+});
+```
+
+If you would like the questions to be randomly administered, select '**Choice** **Randomization'** on the left panel.
+
+![](images/Screenshot%202025-12-03%20at%2019.19.54%20(2).png)
+
+Then choose '**Display answers in a random order**' and click '**Save**'.
+
+![](images/Screenshot%202025-12-03%20at%2019.20.04%20(2).png)
+
+::: callout-tip
+**Tip for maximum performance tests:** When you make the item bank in Step 2, it is convenient to paste all the correct answers into column `Choice1` and make the `Scores` column the same for all the items (e.g. `1000` for dichotomous items). Then, when you come to this step, you can choose 'Display answers in a random order'.
+:::
+
+::: callout-note
+For typical performance tests including Likert-type items, for example, you should **not** randomize the order of the response options since these appear in a fixed order.
+:::
+
+### Step 3.5 - Main CAT Block
+
+1.  Add a new question block named 'cat block'
+2.  Add a **Text/Graphic** type of question,
+3.  and replace the question text with an empty space.
+4.  Then, click **Javascript,** erase everything and add the following JS code
+
+![](images/Screenshot%202025-12-02%20at%2008.14.20.png)
+
+``` javascript
+Qualtrics.SurveyEngine.addOnload(function()
+{
+     let answers = {
+    q_resp: "${q://QID6/SelectedChoicesRecode}",
+    item_num: "${e://Field/item_num}"
+  };
+  
+  console.log("API sent:", answers);
+    // CALL
+    fetch("https://qualcat.duckdns.org/api/v0/cat", {
+    method: "POST",
+    headers: {
+         "Content-Type": "application/json",
+      "x-api-key": "${q://QID2/ChoiceTextEntryValue}", // passwrd
+      "userid": "${e://Field/SessionID}", // username
+      "catName": "${q://QID1/ChoiceTextEntryValue}" // CAT name
+    },
+    body: JSON.stringify(answers)
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log("API returned:", data); // Debug
+    // Store the API result in Embedded Data
+    Qualtrics.SurveyEngine.setEmbeddedData("iter", data.iter);
+    Qualtrics.SurveyEngine.setEmbeddedData("next_q", data.item);
+    Qualtrics.SurveyEngine.setEmbeddedData("item_num", data.item_num);
+    Qualtrics.SurveyEngine.setEmbeddedData("se_thetahat", data.se_thetahat);
+    Qualtrics.SurveyEngine.setEmbeddedData("thetahat", data.thetahat);  
+    Qualtrics.SurveyEngine.setEmbeddedData("pat", data.pat);
+    Qualtrics.SurveyEngine.setEmbeddedData("J", data.pat.length);
+    Qualtrics.SurveyEngine.setEmbeddedData("adm_items", data.iter);
+    Qualtrics.SurveyEngine.setEmbeddedData("stop", data.stop); //v0.2
+    var arr = data.choices;
+    for (var i = 0; i < arr.length; i++) {
+        var varName = "choice" + (i + 1);
+        Qualtrics.SurveyEngine.setEmbeddedData(varName, arr[i]);
+    }
+  })
+  .catch(err => console.error("API error:", err));
+
+//Hides the next button and displays the question
+    //for # seconds before moving to the next page
+    // from Qualtrics documentation
+    this.hideNextButton();
+    var that = this;
+    (function(){that.clickNextButton();}).delay(1);
+
+});
+```
+
+### Step 3.6 - Survey Flow Setup
+
+Click the **Survey Flow** button on the left side bar.
+
+![](images/Screenshot%202025-12-02%20at%2008.18.49.png)
+
+All the question blocks we created before, should be visible in a sequential flow as shown below.
+
+::: callout-note
+In this example no 'Extra Block' is displayed. If you used an extra questions block, it would be visible under the 'Intro' block.
+:::
+
+![](images/Screenshot%202025-12-02%20at%2008.19.43.png)
+
+In the init block, click **Add Below** and select **Group.**
+
+![](images/Screenshot%202025-12-02%20at%2008.20.10.png)
+
+Rename the new group as 'loop' .
+
+Then click **Move** next to the **Question Block** and move it by dragging it under the **Group.** As such we make the Question block part of the group.
+
+![](images/Screenshot%202025-12-02%20at%2008.20.53.png)
+
+Repeat for the **cat block** to make it part of the loop group.
+
+then click **+ Add a New Element** under the cat block, inside the group.
+
+![](images/Screenshot%202025-12-02%20at%2008.21.06.png)
+
+Select **Branch**
+
+![](images/Screenshot%202025-12-02%20at%2008.21.14.png)
+
+Click **Add a Condition**
+
+![](images/Screenshot%202025-12-02%20at%2008.21.24.png)
+
+Select 'Embedded Data'.
+
+![](images/Screenshot%202025-12-02%20at%2008.21.46.png)
+
+1.  Enter the word 'stop' for the embedded data
+
+2.  Select 'Is Equal To' and enter the number '1'
+
+3.  Click OK
+
+4.  Add a New Element [below]{.underline} the if branch
+
+![](images/Screenshot%202025-12-02%20at%2008.21.56.png)
+
+Select the **End of Survey** element
+
+![](images/Screenshot%202025-12-02%20at%2008.22.05.png)
+
+Then, click the button **Duplicate** next to the loop group, as many times as the available total number of items.
+
+In this example, the itembank consists of 36 items in total, therefore we click the button **Duplicate** 36 times.
+
+![](images/Screenshot%202025-12-02%20at%2008.22.49.png)
+
+1.  If we zoom out we should see the loop group duplicated by 36 times.
+
+2.  Then click **Apply** to apply this flow set up to the survey.
+
+![](images/Screenshot%202025-12-02%20at%2008.23.32.png)
+
+### Step 3.7 - Publish the Test/Survey
+
+1.  Go to '**Survey Options**'
+
+2.  Select '**Responses'**
+
+3.  and make sure to uncheck the radio buttons for the Back Button and Allow respondents to finish later
+
+![](images/Screenshot%202025-12-02%20at%2008.39.24.png)
+
+1.  Then go to '**Builder**' options again, and
+2.  click '**Publish**'
+
+![](images/Screenshot%202025-12-02%20at%2008.24.03.png)
+
+After following short instructions, the survey will be published and a unique anonymous URL will be activated.
+
+![](images/Screenshot%202025-12-02%20at%2008.24.24.png)

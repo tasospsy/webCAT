@@ -1,0 +1,48 @@
+---
+title: "Home"
+---
+
+With **webCAT**, you can easily administer a Qualtrics test or survey using Computerized Adaptive Testing (CAT) methods. Before starting, generate a personal access key by clicking the button below. This unique key can be used for multiple tests or surveys. Under the *Tutorial* tab, you will find all the necessary steps for using the webCAT application and setting up the Qualtrics survey. Additional details are available in the published version of the tutorial \[here\].
+
+```{=html}
+<!-- MAIN HTML PAGE -->
+<div style="
+  background-color: rgba(24, 188, 156, 0.1);  /* #18bc9c with 20% opacity */
+  border: 1px solid #18bc9c;
+  padding: 20px;
+">
+  <div class="d-flex gap-3 mt-2">
+  <!-- 1st row -->
+    <fieldset class="flex-fill"> 
+    <button type="button" class="btn btn-outline-success" onclick="newKey()">Generate Personal Key</button>
+    </fieldset>
+    <fieldset class="flex-fill">
+    
+    <div class="flex-fill">
+      Your Personal Key:
+  <code id="key" style="font-size: 1.2rem; color: orange;"> </code>
+    </div>
+    </fieldset>
+  </div>
+</div>
+```
+```{=html}
+<script>
+function newKey() {
+  fetch("https://qualcat.duckdns.org/api/v0/personal-key", {
+    method: 'GET'
+  })
+  .then(r => r.json())
+  .then(data => {
+    const key = data[0];
+    document.querySelector("#key").textContent = key;
+    alert("Please Copy and Paste the key somewhere safe.\n If you ever forget it, please contact us. ");
+  })
+  .catch(err => alert("Error: " + err));
+}
+
+</script>
+```
+::: callout-note
+To follow the example in the current tutorial you do **not** need to generate new personal key. You can continue to the tab **Tutorial.**
+:::

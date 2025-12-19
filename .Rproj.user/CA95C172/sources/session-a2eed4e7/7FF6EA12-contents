@@ -1,0 +1,171 @@
+---
+title: "Step 2: CAT Settings"
+---
+
+```{=html}
+<div style="
+  background-color: rgba(24, 188, 156, 0.1);  /* #18bc9c with 20% opacity */
+  border: 1px solid #18bc9c;
+  padding: 20px;
+">
+  <div class="d-flex gap-3 mt-1">
+    <fieldset class="flex-fill"> 
+    <!-- CAT Name -->
+    <div>
+        <label for="catName" class="form-label">CAT Name</label>
+        <input type="text" class="form-control" id="catName" placeholder="Enter CAT name">
+    </div>
+    </fieldset>
+    <fieldset class="flex-fill">
+    <!-- Personal Key -->
+    <div>
+      <label for="personalKey" class="form-label">Personal Key</label>
+        <input type="password" class="form-control" id="personalKey" placeholder="Enter personal key" autocomplete  ="off">
+    </div>
+    </fieldset>
+  </div>
+    
+    <hr>
+    
+    <!-- Radio Buttons -->
+    <div class="d-flex gap-3 mt-4">
+      
+       <fieldset class="flex-fill">
+      <legend>IRT model</legend>
+      <div>
+      <label for="model" class="form-label mt-2">Select IRT model type</label>
+      <select class="form-select" id="model">
+        <option>1-Parameter Logistic Model (Rasch)</option>
+        <option selected>2-Parameter Logistic Model</option>
+        <!--<option>3-Parameter Logistic Model</option>-->
+        <!--<option>4-Parameter Logistic Model</option>-->
+        <option>Graded Response Model</option>
+        <option>Generalized Partial Credit Model (GPCM)</option>
+      </select>
+    </div>
+    
+    <div>
+    <label for="param" class="form-label">Select the item type</label>
+    <select class="form-select" id="param">
+      <option selected>Blank</option>
+      <option>Intercept-Slope Parameterization</option>
+      <option>IRT Parameterization</option>
+    </select>
+  </div>
+      
+      </fieldset>
+      
+    <fieldset class="flex-fill">
+      <legend>CAT Type</legend>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="catType" id="fixedLength" value="fixed" checked>
+        <label class="form-check-label" for="fixedLength">Fixed-length</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="catType" id="variableLength" value="variable">
+        <label class="form-check-label" for="variableLength">Variable-length</label>
+      </div>
+      <div class="form-check disabled">
+        <input class="form-check-input" type="radio" name="catType" id="Random" value="random" disabled>
+        <label class="form-check-label" for="random">Random</label>
+      </div>
+      
+          <!-- Conditional Inputs -->
+    <div id="fixedInput" class="mt-3">
+      <label for="maxItems" class="form-label">Maximum number of items administered</label>
+      <input type="number" class="form-control" id="maxItems" min="1" value = "10">
+    </div>
+
+    <div id="variableInput" class="mt-3" style="display: none;">
+      <label for="minSE" class="form-label">Minimum Standard Error (SE) of latent trait estimate (default is 0.3)</label>
+      <input type="number" class="form-control" id="minSE" step="0.01" min="0" max = "1" value = "0.3">
+    </div>
+    
+    </fieldset>
+    
+   
+      </div>
+      
+
+
+
+<!-- Advanced -->
+<div class="accordion mt-3" id="accordionExample">
+  <div class="accordion-item">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+      Optional Settings for Advanced mirtCAT:: users
+    </button>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p>
+          The survey/test is generated using the <code>mirtCAT::mirtCAT()</code> function with the following inputs: 
+          <code>criteria = "MI"</code> or <code>criteria = "Drule"</code> for unidimensional and multidimensional test srespectively, 
+          <code>start_item = "MI"</code> for first item selection, and <code>method = "EAP"</code> for ability estimation.
+          If you want to use different values <strong> only for these three arguments</strong>, please specify them as an R list below:
+        </p>
+        <input type="text" id="mirtcatextra" class="form-control mt-2" placeholder='e.g. list(criteria = "MEPV", method = "MAP")'>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Submit -->
+    <button type="button" class="btn btn-outline-success btn-lg mt-4" onclick="submitCAT()">Configure CAT</button>
+</div>
+```
+```{=html}
+<script>
+  function submitCAT() {
+        document.querySelectorAll('input[name="catType"]').forEach(el => {
+        el.addEventListener('change', () => {
+          const type = document.querySelector('input[name="catType"]:checked').value;
+          document.getElementById("fixedInput").style.display = (type === "fixed") ? "block" : "none";
+          document.getElementById("variableInput").style.display = (type === "variable") ? "block" : "none";
+        });
+      });
+    
+      let param = document.getElementById('param').value;
+      let model = document.getElementById('model').value;
+      let reparam = (param === "Intercept-Slope Parameterization") ? "no" : "yes";
+      
+      if (model === "1-Parameter Logistic Model (Rasch)") model = "Rasch";
+      if (model === "2-Parameter Logistic Model") model = "2PL";
+      if (model === "Graded Response Model") model = "graded";
+      if (model === "Generalized Partial Credit Model (GPCM)") model = "gpcm";
+      
+    const config = {
+      catName: document.getElementById("catName").value,
+      personalKey: document.getElementById("personalKey").value,
+      catType: document.querySelector('input[name="catType"]:checked').value,
+      model: model,
+      reparam: reparam,
+      mirtcatextra: document.getElementById('mirtcatextra').value
+    };
+
+    if (config.catType === "fixed") {
+      config.maxItems = parseInt(document.getElementById("maxItems").value);
+    } else if (config.catType === "variable") {
+      config.minSE = parseFloat(document.getElementById("minSE").value);
+    }
+    console.log(config)
+    
+    fetch("https://qualcat.duckdns.org/api/v0/cat-config", {
+    method: "POST",
+    headers: {
+         "Content-Type": "application/json",
+          "x-api-key": config.personalKey},
+      body: JSON.stringify(config)
+    })
+    .then(res => {
+       if (!res.ok) {
+         return res.json().then(err => {
+           throw new Error(err.message || "Unknown error");
+         });
+       }
+       return res.json();
+     })
+    .then(data => alert("CAT configuration saved!"))
+    .catch(err => alert("Error: " + err));
+  }
+</script>
+```

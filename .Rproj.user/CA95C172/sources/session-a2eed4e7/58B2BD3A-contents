@@ -1,0 +1,8 @@
+/* css styles */
+body {
+  background-image: url("your-image.jpg");
+  background-size: cover;
+  background-attachment: fixed; /* optional */
+  background-repeat: no-repeat;
+  background-position: center;
+}

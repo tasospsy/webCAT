@@ -1,0 +1,98 @@
+---
+title: "Step 4: Results"
+---
+
+Test button.
+
+```{=html}
+<script>
+function downloadData() {
+  const key = document.getElementById("floatingPassword").value;
+  
+  const params = {
+    catName: document.getElementById("catNameInput").value,
+    user: document.getElementById("userParamInput").value,
+    from: document.getElementById("fromDateInput").value,
+    to: document.getElementById("toDateInput").value,
+  };
+  let url = `https://qualcat.duckdns.org/api/v0/get-data?catName=${encodeURIComponent(params.catName)}&user=${encodeURIComponent(params.user)}&from=${encodeURIComponent(params.from)}&to=${encodeURIComponent(params.to)}`
+  
+  console.log(url) //debug
+  fetch(url, {
+    method: "GET",
+    headers: {"x-api-key": key   
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Download failed: " + response.statusText);
+        }
+        return response.blob();   // CSV comes as a blob
+    })
+    .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "results.csv";   // <-- file name for the download
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+    })
+    .catch(err => {
+        console.error("Download error:", err);
+        alert("Could not download file.");
+    });
+}
+</script>
+```
+```{=html}
+<div style="
+  background-color: rgba(24, 188, 156, 0.1);  /* #18bc9c with 20% opacity */
+  border: 1px solid #18bc9c;
+  padding: 20px;
+">
+  <div class="d-flex gap-3 mt-1">
+  <!-- 1st row -->
+  <fieldset class="flex-fill">
+    <div class="form-floating">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Personal Key" autocomplete="off">
+    <label for="floatingPassword">Personal Key*</label>
+    </div>
+  </fieldset>
+  <fieldset class="flex-fill">
+    <div class="form-floating">
+    <input type="text" class="form-control" id="catNameInput" placeholder="CAT Name">
+    <label for="catNameInput">CAT Name</label>
+    </div>
+  </fieldset>
+  <fieldset class="flex-fill">
+      <div  class="form-floating">
+      <input type="text" class="form-control" id="userParamInput" placeholder="Username or ID" style="font-size: 0.85rem;">
+      <label for="userParamInput">Username or ID</label>
+      </div>
+  </fieldset>
+  </div>
+
+  <div class="d-flex gap-3 mt-2">
+  <fieldset class="flex-fill">
+    <div>
+    <label class="col-form-label" for="fromDateInput">From Date</label>
+    <input type="date" class="form-control" id="fromDateInput" name="from" placeholder="">
+    </div>
+  </fieldset>
+  <fieldset class="flex-fill">
+    <div>
+    <label class="col-form-label" for="toDateInput">To Date</label>
+    <input type="date" class="form-control" id="toDateInput" name="to" placeholder="">
+    </div>
+  </fieldset>
+      
+  <fieldset class="flex-fill">
+  <button class="btn btn-outline-success" onclick="downloadData()">
+  Download Responses
+  </button>
+  </fieldset>
+  </div>
+</div>
+```

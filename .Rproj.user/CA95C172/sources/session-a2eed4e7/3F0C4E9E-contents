@@ -1,0 +1,4 @@
+test <- read.csv("~/Downloads/itembank (2).csv", colClasses = c(Solution = "character"))
+write.csv(test, "test.csv", quote = TRUE, row.names = FALSE) 
+
+read.csv("test.csv", colClasses = c(Solution = "character"))
