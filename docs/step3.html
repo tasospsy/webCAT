@@ -297,19 +297,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <p>No CAT methods are configured for the ‘Extra’ bolck. All users will be asked the same questions.</p>
-</div>
-</div>
 </div>
 </div>
 <p><img src="images/Screenshot 2026.png" class="img-fluid"></p>
@@ -343,7 +331,7 @@ Note
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">headers</span><span class="op">:</span> {</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Content-Type"</span><span class="op">:</span> <span class="st">"application/json"</span><span class="op">,</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x-api-key"</span><span class="op">:</span> <span class="st">"${q://QID2/ChoiceTextEntryValue}"</span><span class="op">,</span> <span class="co">// passwrd</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"userid"</span><span class="op">:</span> <span class="st">"$${e://Field/RecipientID}"</span><span class="op">,</span> <span class="co">// username</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"userid"</span><span class="op">:</span> <span class="st">"${e://Field/SessionID}"</span><span class="op">,</span> <span class="co">// username</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"catName"</span><span class="op">:</span> <span class="st">"${q://QID1/ChoiceTextEntryValue}"</span> <span class="co">// CAT name</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(answers)</span>
@@ -382,24 +370,7 @@ Note
 <li><p>Replace the ‘Click to write Choice 1’ with <code>${e://Field/choice1},</code>‘Click to write Choice 2’ with <code>${e://Field/choice2}</code> . Repeat this process for each of the available choices.</p></li>
 </ul>
 <p><img src="images/Screenshot 2025-12-02 at 08.13.19.png" class="img-fluid"></p>
-<p>Next, if you would like the questions to be randomly administered, select ’<strong>Choice</strong> <strong>Randomization’</strong> on the left panel.</p>
-<p><img src="images/Screenshot 2025-12-03 at 19.19.54 (2).png" class="img-fluid"></p>
-<p>Then choose ‘<strong>Display answers in a random order</strong>’ and click ‘<strong>Save</strong>’.</p>
-<p><img src="images/Screenshot 2025-12-03 at 19.20.04 (2).png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Tip for maximum performance tests:</strong> When you make the item bank in Step 2, it is covinient to paste all the correct answers into column <code>Choice1</code> and make the <code>Scores</code> column the same for all the items (e.g.&nbsp;<code>1000</code> for dichotomous items). Then, when you come to this step, you can choose ‘Display answers in a random order’.</p>
-</div>
-</div>
-<p>Next, for the same question in Question Block, click the ‘<strong>Javascript</strong>’ button on the left panel, erase the default script, paste the following and click ‘<strong>Save</strong>’:</p>
+<p>Next, click the ‘<strong>Javascript</strong>’ button on the left panel, erase the default script, paste the following and click ‘<strong>Save</strong>’:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnReady</span>(<span class="kw">function</span>() {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 1. clear Qualtrics internal answer</span></span>
@@ -414,11 +385,41 @@ Tip
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 3. clear UI radios</span></span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">jQuery</span>(<span class="st">"#"</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">questionId</span> <span class="op">+</span> <span class="st">" input[type='radio']"</span>)<span class="op">.</span><span class="fu">prop</span>(<span class="st">"checked"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you would like the questions to be randomly administered, select ’<strong>Choice</strong> <strong>Randomization’</strong> on the left panel.</p>
+<p><img src="images/Screenshot 2025-12-03 at 19.19.54 (2).png" class="img-fluid"></p>
+<p>Then choose ‘<strong>Display answers in a random order</strong>’ and click ‘<strong>Save</strong>’.</p>
+<p><img src="images/Screenshot 2025-12-03 at 19.20.04 (2).png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Tip for maximum performance tests:</strong> When you make the item bank in Step 2, it is convenient to paste all the correct answers into column <code>Choice1</code> and make the <code>Scores</code> column the same for all the items (e.g.&nbsp;<code>1000</code> for dichotomous items). Then, when you come to this step, you can choose ‘Display answers in a random order’.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For typical performance tests including Likert-type items, for example, you should <strong>not</strong> randomize the order of the response options since these appear in a fixed order.</p>
+</div>
+</div>
 </section>
 <section id="step-3.5---main-cat-block" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.5---main-cat-block">Step 3.5 - Main CAT Block</h3>
 <ol type="1">
-<li>Similarly, add a new question block named ‘cat block’</li>
+<li>Add a new question block named ‘cat block’</li>
 <li>Add a <strong>Text/Graphic</strong> type of question,</li>
 <li>and replace the question text with an empty space.</li>
 <li>Then, click <strong>Javascript,</strong> erase everything and add the following JS code</li>
@@ -438,7 +439,7 @@ Tip
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">headers</span><span class="op">:</span> {</span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Content-Type"</span><span class="op">:</span> <span class="st">"application/json"</span><span class="op">,</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x-api-key"</span><span class="op">:</span> <span class="st">"${q://QID2/ChoiceTextEntryValue}"</span><span class="op">,</span> <span class="co">// passwrd</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"userid"</span><span class="op">:</span> <span class="st">"$${e://Field/RecipientID}"</span><span class="op">,</span> <span class="co">// username</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"userid"</span><span class="op">:</span> <span class="st">"${e://Field/SessionID}"</span><span class="op">,</span> <span class="co">// username</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">"catName"</span><span class="op">:</span> <span class="st">"${q://QID1/ChoiceTextEntryValue}"</span> <span class="co">// CAT name</span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(answers)</span>
@@ -539,6 +540,9 @@ Note
 <p><img src="images/Screenshot 2025-12-02 at 08.24.03.png" class="img-fluid"></p>
 <p>After following short instructions, the survey will be published and a unique anonymous URL will be activated.</p>
 <p><img src="images/Screenshot 2025-12-02 at 08.24.24.png" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p>If you have not set up your own test, visit: <a href="https://uva.fra1.qualtrics.com/jfe/form/SV_bKF45qMy1dq7Ioe" class="uri">https://uva.fra1.qualtrics.com/jfe/form/SV_bKF45qMy1dq7Ioe</a> to take the English-Dutch vocabulary test on Qualtrics.</p>
+</blockquote>
 
 
 </section>

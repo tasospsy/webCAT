@@ -253,9 +253,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     rawDataContainer.style.display = checkbox.checked ? "block" : "none";
   }
 </script>-->
-<p>For the purpose of this tutorial, you can use the <code>R</code> code below to create an itembank with polytomous items, or use <a href="https://osf.io/ymh3d/files/sk9hx"><strong>this file</strong></a> for an English-Dutch vocabulary test, which includes 36 dichotomous items.</p>
+<p>For the purpose of this tutorial, you can use the <code>R</code> code below to create an itembank with polytomous items, or use <code>MS Excel</code> with <a href="https://osf.io/ymh3d/files/sk9hx"><strong>this file</strong></a> for an English-Dutch vocabulary test, which includes 36 dichotomous items.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Details for the itembank structure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Example itembank in <code>R</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Example itembank in <code>Microsoft Excel</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Details for the itembank structure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Example itembank in <code>R</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Example itembank in <code>Excel</code></a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>The item bank must be a <code>.csv</code> (Comma-Separated Values) file, with specific column names and structure. The number of rows should correspond to the number of available items.</p>
@@ -323,15 +323,20 @@ For multidimensional structures, <code>d1</code> corresponds to the first thresh
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Generate a unidimensional itembank blueprint for 36 dichotomous items with four response options each.</p>
-<p><img src="images/Screenshot 2025-12-19 at 10.15.09.png" class="img-fluid"></p>
-<p>Open Microsoft Excel.</p>
-<p>Select the first column and go to <strong>Data</strong> tab — (<strong>Split) Text to Columns</strong></p>
+<ul>
+<li><p>Generate a unidimensional itembank blueprint for 36 dichotomous items with four response options each.</p></li>
+<li><p>Open Microsoft Excel.</p></li>
+<li><p>Select the first column and go to <strong>Data</strong> tab — (<strong>Split) Text to Columns.</strong></p></li>
+</ul>
 <p><img src="images/Screenshot 2025-12-19 at 11.19.46.png" class="img-fluid"></p>
-<p>Then select <strong>Comma</strong> delimiter and <strong>Apply</strong> (or <strong>Finish</strong>)</p>
-<p><img src="images/Screenshot 2025-12-19 at 11.20.12.png" class="img-fluid"></p>
-<p>Enter the data of your itembank in all columns</p>
-<p>Click <strong>File — Save As…</strong> and save the itembank file as <strong>.csv</strong> file</p>
+<ul>
+<li>Then select <strong>Comma</strong> delimiter and click <strong>Apply</strong> (or <strong>Finish</strong>).</li>
+</ul>
+<p><img src="images/Screenshot 2025-12-19 at 11.20.12.png" class="img-fluid" width="800"></p>
+<ul>
+<li><p>Enter the data of your itembank in all columns manually.</p></li>
+<li><p>Click <strong>File — Save As…</strong> and save the itembank as <strong>.csv</strong> file.</p></li>
+</ul>
 <p>The final item bank of the English-Dutch vocabulary test can be found <a href="https://osf.io/ymh3d/files/sk9hx">here</a>.</p>
 </div>
 </div>
