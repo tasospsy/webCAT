@@ -169,11 +169,11 @@ write.csv(item_bank, file.path(wd, "itembank.csv"), row.names = FALSE, quote = T
 
 -   Select the first column and go to **Data** tab — (**Split) Text to Columns.**
 
-![](images/Screenshot 2025-12-19 at 11.19.46.png)
+![](images/Screenshot%202025-12-19%20at%2011.19.46.png)
 
 -   Then select **Comma** delimiter and click **Apply** (or **Finish**).
 
-![](images/Screenshot 2025-12-19 at 11.20.12.png){width="800"}
+![](images/Screenshot%202025-12-19%20at%2011.20.12.png){width="800"}
 
 -   Enter the data of your itembank in all columns manually.
 

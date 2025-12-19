@@ -354,3 +354,5 @@ In this example, the itembank consists of 36 items in total, therefore we click 
 After following short instructions, the survey will be published and a unique anonymous URL will be activated.
 
 ![](images/Screenshot%202025-12-02%20at%2008.24.24.png)
+
+> If you have not set up your own test, visit: <https://uva.fra1.qualtrics.com/jfe/form/SV_bKF45qMy1dq7Ioe> to take the English-Dutch vocabulary test on Qualtrics.
