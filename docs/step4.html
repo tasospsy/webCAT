@@ -167,9 +167,12 @@ function downloadData() {
     from: document.getElementById("fromDateInput").value,
     to: document.getElementById("toDateInput").value,
   };
-  let url = `https://qualcat.duckdns.org/api/v0/get-data?catName=${encodeURIComponent(params.catName)}&user=${encodeURIComponent(params.user)}&from=${encodeURIComponent(params.from)}&to=${encodeURIComponent(params.to)}`
+    if (!key || !params.catName) {
+  alert("Please fill in all required fields: Personal Key & CAT Name.");
   
-  console.log(url) //debug
+  let url = `https://qualcat.duckdns.org/api/v0/get-data?catName=${encodeURIComponent(params.catName)}&user=${encodeURIComponent(params.user)}&from=${encodeURIComponent(params.from)}&to=${encodeURIComponent(params.to)}`
+
+  //console.log(url) //debug
   fetch(url, {
     method: "GET",
     headers: {"x-api-key": key   
@@ -213,7 +216,7 @@ function downloadData() {
   <fieldset class="flex-fill">
     <div class="form-floating">
     <input type="text" class="form-control" id="catNameInput" placeholder="CAT Name">
-    <label for="catNameInput">CAT Name</label>
+    <label for="catNameInput">CAT Name*</label>
     </div>
   </fieldset>
   <fieldset class="flex-fill">
