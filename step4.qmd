@@ -2,7 +2,8 @@
 title: "Step 4: Results"
 ---
 
-Test button.
+Enter the Test Name and the Personal Key to get the results.\
+You can filter by date.
 
 ```{=html}
 <script>
@@ -46,6 +47,7 @@ function downloadData() {
         console.error("Download error:", err);
         alert("Could not download file.");
     });
+  }
 }
 </script>
 ```
@@ -69,11 +71,16 @@ function downloadData() {
     <label for="catNameInput">CAT Name*</label>
     </div>
   </fieldset>
-  <fieldset class="flex-fill">
+  <!--<fieldset class="flex-fill">
       <div  class="form-floating">
       <input type="text" class="form-control" id="userParamInput" placeholder="Username or ID" style="font-size: 0.85rem;">
       <label for="userParamInput">Username or ID</label>
       </div>
+  </fieldset>-->
+   <fieldset class="flex-fill">
+  <button class="btn btn-outline-success" onclick="downloadData()">
+  Download Responses
+  </button>
   </fieldset>
   </div>
 
@@ -91,11 +98,6 @@ function downloadData() {
     </div>
   </fieldset>
       
-  <fieldset class="flex-fill">
-  <button class="btn btn-outline-success" onclick="downloadData()">
-  Download Responses
-  </button>
-  </fieldset>
   </div>
 </div>
 ```
