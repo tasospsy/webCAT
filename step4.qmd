@@ -17,6 +17,7 @@ function downloadData() {
   };
     if (!key || !params.catName) {
   alert("Please fill in all required fields: Personal Key & CAT Name.");
+    }
   
   let url = `https://qualcat.duckdns.org/api/v0/get-data?catName=${encodeURIComponent(params.catName)}&from=${encodeURIComponent(params.from)}&to=${encodeURIComponent(params.to)}`
 
@@ -46,7 +47,6 @@ function downloadData() {
         console.error("Download error:", err);
         alert("Could not download file.");
     });
-  }
 }
 </script>
 ```
