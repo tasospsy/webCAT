@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>webCAT - Home</title>
+<title>webCAT</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -94,8 +94,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial.html"> 
-<span class="menu-text">Tutorial</span></a>
+    <a class="nav-link" href="./procedure.html"> 
+<span class="menu-text">Procedure</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./step4.html"> 
@@ -128,23 +128,29 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-access-token" id="toc-the-access-token" class="nav-link active" data-scroll-target="#the-access-token">The access token</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Home</h1>
+<h1 class="title">webCAT</h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -156,57 +162,102 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>With <strong>webCAT</strong>, you can easily administer a Qualtrics test or survey using Computerized Adaptive Testing (CAT) methods. Before starting, generate a personal access key by clicking the button below. This unique key can be used for multiple tests or surveys. Under the <em>Tutorial</em> tab, you will find all the necessary steps for using the webCAT application and setting up the Qualtrics survey. Additional details are available in the published version of the tutorial [here].</p>
+<p>The <strong>webCAT</strong> application brings Computerized Adaptive Testing (CAT) and Multi-Stage Testing (MST) to your <a href="https://www.qualtrics.com/"><strong>Qualtrics</strong></a> tests, surveys, and questionnaires.</p>
+<p>In CAT, each test adapts to the respondent in real time. Participants see only the items that are most relevant to them, making the experience shorter, more engaging, and more precise.</p>
+<hr>
+<p><strong>webCAT</strong> can implement</p>
+<ul>
+<li><p>both fixed-length CAT and variable-length CAT based on either the estimated item parameters from an IRT model <del>or the raw items scores of the respondents in a norm sample</del>.</p></li>
+<li><p>MST based either the estimated item parameters from an IRT model, the raw items scores of the respondents in a norm sample, or the <em>p</em>-values reported in the literature (Approximate MST).</p></li>
+</ul>
+<p>Detailed instructions are provided under the <em>Procedure</em> tab.</p>
+<hr>
+<section id="the-access-token" class="level3">
+<h3 class="anchored" data-anchor-id="the-access-token">The access token</h3>
+<ul>
+<li><p>If you would like to use your own data, you must first generate an access token by clicking the “Generate Token” button below.</p></li>
+<li><p>If you would like to use one of the example datasets or have previously generated a token, you can proceed directly to the Procedure tab.</p></li>
+</ul>
 <!-- MAIN HTML PAGE -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <div style="
   background-color: rgba(24, 188, 156, 0.1);  /* #18bc9c with 20% opacity */
   border: 1px solid #18bc9c;
   padding: 20px;
 ">
-  <div class="d-flex gap-3 mt-2">
+  <div class="d-flex gap-0 mt-2">
   <!-- 1st row -->
     <fieldset class="flex-fill"> 
-    <button type="button" class="btn btn-outline-success" onclick="newKey()">Generate Personal Key</button>
+    <button type="button" class="btn btn-outline-success" onclick="newKey()">Generate Token</button>
     </fieldset>
     <fieldset class="flex-fill">
     
     <div class="flex-fill">
-      Your Personal Key:
+      The Generated Token Is:
   <code id="key" style="font-size: 1.2rem; color: orange;"> </code>
     </div>
     </fieldset>
   </div>
 </div>
+<div class="d-flex mt-2 mb-2 gap-0">
+  <small id="emailHelp" class="form-text text-muted">After the token is generated, enter your email address and click Send to receive the generated token by email.</small>
+  </div>
+  <div class="d-flex mt-3 mb-2 gap-0">
+      
+      <input id="email" type="text" class="form-control w-50" placeholder="Email Address" aria-describedby="button-addon2">
+      <button class="btn btn-primary" type="button" onclick="sendEmail()">   <i class="fa-solid fa-paper-plane"></i>
+</button>
+  </div>
+  
+  
 <script>
 function newKey() {
   fetch("https://qualcat.duckdns.org/api/v0/personal-key", {
-    method: 'GET'
+    method: 'GET', 
   })
   .then(r => r.json())
   .then(data => {
     const key = data[0];
     document.querySelector("#key").textContent = key;
-    alert("Please Copy and Paste the key somewhere safe.\n If you ever forget it, please contact us. ");
+    alert("Please Copy and Paste the token somewhere safe or fill in your email address below to receive it via email.");
   })
   .catch(err => alert("Error: " + err));
 }
-
 </script>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>To follow the example in the current tutorial you do <strong>not</strong> need to generate new personal key. You can continue to the tab <strong>Tutorial.</strong></p>
-</div>
+<script>
+function sendEmail() {
+    const token = document.querySelector("#key").textContent;
+    const email = document.getElementById("email").value;
+  if (token == " ") {
+  alert("Please generate a new token first.");
+  return;}
+  if (!email) {
+  alert("Please fill in your email.");
+  return;}
+  //console.log(token); console.log(email);
+ fetch("https://qualcat.duckdns.org/api/v0/SendTokenToEmail", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({token, email})
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(err => alert("Error: " + err));
+}
+</script>
+<div class="text-end">
+  <a href="procedure.html" class="btn btn-success btn-lg">
+    Get Started →
+  </a>
 </div>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -625,7 +676,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Copyright 2025,</p>
+<p>Copyright 2026</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

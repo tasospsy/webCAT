@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>webCAT - Tutorial</title>
+<title>webCAT -</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -162,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -170,7 +170,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-0-optional-download-itembank-blueprint" id="toc-step-0-optional-download-itembank-blueprint" class="nav-link active" data-scroll-target="#step-0-optional-download-itembank-blueprint">Step 0 (Optional): Download itembank blueprint</a></li>
+  <li><a href="#sec-tutorial" id="toc-sec-tutorial" class="nav-link active" data-scroll-target="#sec-tutorial">Tutorial</a></li>
+  <li><a href="#step-0-optional-download-itembank-blueprint" id="toc-step-0-optional-download-itembank-blueprint" class="nav-link" data-scroll-target="#step-0-optional-download-itembank-blueprint">Step 0 (Optional): Download itembank blueprint</a></li>
   <li><a href="#sec-step1" id="toc-sec-step1" class="nav-link" data-scroll-target="#sec-step1">Step 1: Upload the itembank</a></li>
   <li><a href="#step-2-test-design" id="toc-step-2-test-design" class="nav-link" data-scroll-target="#step-2-test-design">Step 2: Test Design</a></li>
   <li><a href="#step-3-qualtrics-set-up" id="toc-step-3-qualtrics-set-up" class="nav-link" data-scroll-target="#step-3-qualtrics-set-up">Step 3: Qualtrics set-up</a>
@@ -188,27 +189,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Tutorial</h1>
-</div>
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+<section id="sec-tutorial" class="level2">
+<h2 class="anchored" data-anchor-id="sec-tutorial">Tutorial</h2>
 <p>To create a new test/survey, please enter a Test Name of your choice below, along with the unique key you created under the ‘<strong>Home</strong>’ tab. <strong><em>Note.</em></strong> The name must <strong>not</strong> contain special symbols or spaces.</p>
 <p>To follow the example in the current tutorial, please use <code>TCAT</code> for the test name and <code>test</code> for the personal key.</p>
 <div style="
@@ -227,13 +214,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <fieldset class="flex-fill">
     <!-- Personal Key -->
     <div class="form-floating mt-1">
-      <input type="password" class="form-control" id="key" placeholder="Personal Key" autocomplete="off">
-      <label for="key">Personal Key<sup>*</sup></label>
+      <input type="password" class="form-control" id="key" placeholder="Token" autocomplete="off">
+      <label for="key">Token<sup>*</sup></label>
     </div>
     </fieldset>
   </div>
   <p style="margin: 0.85em 0; font-size: 0.75em;"><sup>*</sup> Required field.</p>
 </div>  
+</section>
 <section id="step-0-optional-download-itembank-blueprint" class="level2">
 <h2 class="anchored" data-anchor-id="step-0-optional-download-itembank-blueprint">Step 0 (Optional): Download itembank blueprint</h2>
 <p>This tutorial requires the upload of an itembank at <strong>Step 1</strong> with a specific structure. To ensure that no errors occur at the later stages and that the column structure is correct, you can download an itembank blueprint. This can be used as a template to fill in the actual data for your test/survey.</p>
@@ -409,7 +397,7 @@ async function sendData() {
 </script>-->
 <p>For the purpose of this tutorial, you can use the <code>R</code> code below to create an itembank with polytomous items, or use <code>MS Excel</code> with <a href="https://osf.io/ymh3d/files/sk9hx"><strong>this file</strong></a> for an English-Dutch vocabulary test, which includes 36 dichotomous items.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Details for the itembank structure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Example itembank in <code>R</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Example itembank in <code>Excel</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Itembank structure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Example itembank in <code>R</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Example itembank in <code>Excel</code></a></li></ul>
 <div class="tab-content" data-group="language">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>The item bank must be a <code>.csv</code> (Comma-Separated Values) file, with specific column names and structure. The number of rows should correspond to the number of available items.</p>
@@ -1459,7 +1447,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Copyright 2025,</p>
+<p>Copyright 2026</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

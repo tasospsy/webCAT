@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./images/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -127,8 +128,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial.html"> 
-<span class="menu-text">Tutorial</span></a>
+    <a class="nav-link" href="./procedure.html"> 
+<span class="menu-text">Procedure</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./step4.html"> 
@@ -145,12 +146,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://code.com">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/tasospsy/webCAT">
             Source Code
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="https://bugs.com">
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/tasospsy/webCAT/issues">
             Report a Bug
             </a>
           </li>
@@ -161,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -181,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
@@ -194,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><code>TCAT</code></td>
 </tr>
 <tr class="even">
-<td>Personal key</td>
+<td>Token</td>
 <td><code>test</code></td>
 </tr>
 </tbody>
@@ -220,73 +221,86 @@ Note
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2025-12-02 at 08.00.42.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
+<p><img src="images2/n1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></p>
 </figure>
 </div>
-<p>Once you create a new project, select <strong>Add a new question</strong>.</p>
-<p>From the left panel, under <strong>Question Type</strong>, choose <strong>Text entry</strong> type of question.</p>
+<p>Once you create a new project, modify the default first question. Click on it to select it.</p>
+<p>Then from the left panel, under <strong>Question Type</strong>, choose <strong>Text entry</strong> type of question.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2025-12-02 at 08.02.33.png" id="sc2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
+<p><img src="images2/n2.png" id="sc2" class="img-fluid quarto-figure quarto-figure-center anchored figure-img"></p>
 </figure>
 </div>
-<p>Change the question text to ‘<strong>Enter Test/Survey name</strong>’.</p>
+<p>Change the question text to ‘<strong>Test Name</strong>’.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2025-12-02 at 08.02.49.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images2/n3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>By clicking on the three dots menu on the right corner of the new question, select <strong>Copy</strong> to create a similar question type.</p>
+<p>Then, click on the three dots menu on the right corner of the ‘Test Name’ question and select <strong>Copy</strong> to create new question of similar type.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2025-12-02 at 08.03.06.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images2/n4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
 </figure>
 </div>
-<p>Change the question text to ’<strong>Enter key’</strong> at the second question.</p>
+<p>Change the question text to ’<strong>Access Token’</strong> at the second question.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2025-12-02 at 08.03.21.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images2/n5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <p>These two questions belong to a single block, which will be the first block in your test. This block is crucial, as it links the Qualtrics survey to the correct test specifications you set up in Steps 1 and 2.</p>
-<p>Rename the first <strong>Block</strong> as ‘Setup’ block, by changing the label above the first question.</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.03.59.png" class="img-fluid"></p>
-<p>Then, for the ’<strong>Enter Test/Survey Name’</strong> question, select <strong>Add requirements</strong> and <strong>Force response</strong> under the <strong>response Requirements</strong> options on the left panel.</p>
-<p>Repeat for the ’<strong>Enter Key’</strong> question.</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.04.png" class="img-fluid"></p>
-<p>Then, select ‘<strong>Default choices</strong>’ from the options on the left panel. Enter the name of your test in the first question, and click ‘<strong>Save</strong>’. (For this tutorial paste <code>TCAT</code>)</p>
-<p>Then repeat the process for the second question, entering the personal key that was generated previously. (For this tutorial paste <code>test</code>)</p>
-<p><img src="images/Screenshot 2025-12-19 at 07.54.45.png" class="img-fluid"></p>
-<p><img src="images/Screenshot 2025-12-19 at 07.55.21.png" class="img-fluid"></p>
+<p>Rename the first Block as ‘<strong>Setup</strong>’ block, by changing the label above the first question.</p>
+<p><img src="images2/n6.png" class="img-fluid"></p>
+<p>Then, for the ’<strong>Test Name’</strong> question, select <strong>Add requirements</strong> and <strong>Force response</strong> under the <strong>Response Requirements</strong> options on the left panel.</p>
+<p>Repeat for the ’<strong>Access Token’</strong> question.</p>
+<p><img src="images2/n7.png" class="img-fluid"></p>
+<hr>
+<p>Then, for the ‘<strong>Test Name’</strong> question select’<strong>Default choices</strong>’ from the options on the left panel. Enter the name of your test in the first question as the default choice, and click ‘<strong>Save</strong>’.</p>
+<p>Then repeat the process for the second question, entering the access token that you generated previously.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here we follow the PPSE by entering <code>PPSE</code> as the test name and <code>Tok1234</code> as the access token. For the TCAT: Enter <code>TCAT</code> as the test name and <code>Tok1234</code> as the access token.</p>
+</div>
+</div>
+<p><img src="images2/n8.png" class="img-fluid"></p>
+<p><img src="images2/n9.png" class="img-fluid"></p>
+<p>Then select the ‘<strong>Access Token</strong>’ question and click the JavaScript option on the left side panel.</p>
+<p><img src="images2/n10.png" class="img-fluid"></p>
+<p>Replace the default lines of code in the pop-up window with the script below and click <strong>Save.</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnload</span>(<span class="kw">function</span>() {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>     <span class="kw">this</span><span class="op">.</span><span class="fu">hideNextButton</span>()<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> that <span class="op">=</span> <span class="kw">this</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">function</span>(){that<span class="op">.</span><span class="fu">clickNextButton</span>()<span class="op">;</span>})<span class="op">.</span><span class="fu">delay</span>(<span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="images2/n11.png" class="img-fluid"></p>
+<hr>
 </section>
 <section id="step-3.2-introduction-block-optional" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.2-introduction-block-optional">Step 3.2 Introduction Block (<em>optional</em>)</h3>
+<p>This block consists of a text question. It is optional and can be used to display introductory text for your study, such as guidelines, ethical approvals, participation consent, and contact information.</p>
 <ol type="1">
 <li><p>Add a new block by selecting <strong>Add Block</strong></p></li>
 <li><p>Rename the new block as ‘Intro’</p></li>
 <li><p>Add new question to the block by selecting ’<strong>Add new question’</strong></p></li>
 <li><p>and then ‘<strong>Text / Graphic</strong>’ type</p></li>
 </ol>
-<p><img src="images/Screenshot 2025-12-19 at 08.13.34.png" class="img-fluid"></p>
-<p>This does not serve as an actual question; rather, it displays all the necessary information for the test user. You can use it to introduce your test before item administration starts.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You can add new questions to the ‘Intro’ block. For example, you could add a single-choice question to ask for informed consent.</p>
-</div>
-</div>
+<p><img src="images2/n12.png" class="img-fluid"></p>
+<p>This does not serve as an actual question; rather, it displays all the necessary information for the test user.</p>
+<p>In this example we add some plain text:</p>
 <p><img src="images/Screenshot 2025-12-19 at 08.18.16.png" class="img-fluid"></p>
 </section>
 <section id="step-3.2-extra-block-optional" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.2-extra-block-optional">Step 3.2 Extra Block (<em>optional</em>)</h3>
-<p>Similarly, you can add an additional block, here labelled as ‘Extra’ block , with additional questions that you would like to appear before the actual CAT survey. These may be demographic or other personal questions.</p>
+<p>Similarly to the Intro block, you can add an additional block, here labelled as <strong>‘Extra’</strong>, with questions you would like to appear before the actual CAT. These may include demographic or other personal questions. In this example, the ‘Extra’ block consists of two <em>dummy</em> questions: One is for gender and the other is for age.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -297,111 +311,69 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No CAT methods are configured for the ‘Extra’ bolck. All users will be asked the same questions.</p>
+<p>No CAT methods are configured for the ‘Extra Block’. All users will be asked the same questions.</p>
 </div>
 </div>
-<p><img src="images/Screenshot 2026.png" class="img-fluid"></p>
-<p>In the example below, the ‘Extra Block’ consists of two questions: One is for gender and the other is for age.</p>
-<p><img src="images/Screenshot 2025-12-19 at 08.32.59.png" class="img-fluid"></p>
+<p><img src="images2/n13.png" class="img-fluid"></p>
 </section>
 <section id="step-3.3-cat-initialization-block" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.3-cat-initialization-block">Step 3.3 CAT Initialization Block</h3>
 <p>Similarly,</p>
 <ol type="1">
-<li>we add a new block,</li>
-<li>rename it to ‘init block’</li>
-<li>add a new <strong>Text / Entry</strong> question type,</li>
-<li>and enter the phrase ‘Loading…’ as question text.</li>
+<li>Add a new block,</li>
+<li>Rename it to ‘Init’</li>
+<li>Add a new <strong>Text / Entry</strong> question type,</li>
+<li>Enter the phrase ‘Loading…’ as question text.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Screenshot 2025-12-02 at 08.08.08.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images2/n14.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <p>For the ‘Loading…’ question, select the ’<strong>Javascript’</strong> option from the left panel.</p>
 <p><img src=".png" class="img-fluid"></p>
-<p><img src="images/Screenshot 2025-12-02 at 08.08.16.png" class="img-fluid"></p>
-<p>A new window will appear as shown below.</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.10.10.png" class="img-fluid"></p>
-<p>Replace the default lines of code with the script below and click ‘<strong>Save</strong>’:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnload</span>(<span class="kw">function</span>() {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// CALL</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(<span class="st">"https://qualcat.duckdns.org/api/v0/init"</span><span class="op">,</span> {</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">method</span><span class="op">:</span> <span class="st">"POST"</span><span class="op">,</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">headers</span><span class="op">:</span> {</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Content-Type"</span><span class="op">:</span> <span class="st">"application/json"</span><span class="op">,</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x-api-key"</span><span class="op">:</span> <span class="st">"${q://QID2/ChoiceTextEntryValue}"</span><span class="op">,</span> <span class="co">// passwrd</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"userid"</span><span class="op">:</span> <span class="st">"${e://Field/SessionID}"</span><span class="op">,</span> <span class="co">// username</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"catName"</span><span class="op">:</span> <span class="st">"${q://QID1/ChoiceTextEntryValue}"</span> <span class="co">// CAT name</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(answers)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">json</span>())</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> {</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"API returned:"</span><span class="op">,</span> data)<span class="op">;</span> <span class="co">// Debug</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Store the API result in Embedded Data</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"stop_crit"</span><span class="op">,</span> data<span class="op">.</span><span class="at">stop_crit</span>)<span class="op">;</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"next_q"</span><span class="op">,</span> data<span class="op">.</span><span class="at">next_q</span>)<span class="op">;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"item_num"</span><span class="op">,</span> data<span class="op">.</span><span class="at">item_num</span>)<span class="op">;</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> arr <span class="op">=</span> data<span class="op">.</span><span class="at">choices</span><span class="op">;</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arr<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> varName <span class="op">=</span> <span class="st">"choice"</span> <span class="op">+</span> (i <span class="op">+</span> <span class="dv">1</span>)<span class="op">;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(varName<span class="op">,</span> arr[i])<span class="op">;</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"API error:"</span><span class="op">,</span> err))<span class="op">;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="co">//Hides the next button and displays the question</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">//for # seconds before moving to the next page</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">// from Qualtrics documentation</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">hideNextButton</span>()<span class="op">;</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> that <span class="op">=</span> <span class="kw">this</span><span class="op">;</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">function</span>(){that<span class="op">.</span><span class="fu">clickNextButton</span>()<span class="op">;</span>})<span class="op">.</span><span class="fu">delay</span>(<span class="dv">4</span>)<span class="op">;</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="images2/n15.png" class="img-fluid"></p>
+<p>Replace the default lines of code in the pop-up window with the script below and click ‘<strong>Save</strong>’:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnload</span>(<span class="kw">function</span>() {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// CALL</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(<span class="st">"https://qualcat.duckdns.org/api/v0/init"</span><span class="op">,</span> {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">method</span><span class="op">:</span> <span class="st">"POST"</span><span class="op">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">headers</span><span class="op">:</span> {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Content-Type"</span><span class="op">:</span> <span class="st">"application/json"</span><span class="op">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x-api-key"</span><span class="op">:</span> <span class="st">"${q://QID2/ChoiceTextEntryValue}"</span><span class="op">,</span> <span class="co">// passwrd</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"userid"</span><span class="op">:</span> <span class="st">"${e://Field/SessionID}"</span><span class="op">,</span> <span class="co">// username</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"catName"</span><span class="op">:</span> <span class="st">"${q://QID1/ChoiceTextEntryValue}"</span> <span class="co">// CAT name</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(answers)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">json</span>())</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> {</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"API returned:"</span><span class="op">,</span> data)<span class="op">;</span> <span class="co">// Debug</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Store the API result in Embedded Data</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"stop_crit"</span><span class="op">,</span> data<span class="op">.</span><span class="at">stop_crit</span>)<span class="op">;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"next_q"</span><span class="op">,</span> data<span class="op">.</span><span class="at">next_q</span>)<span class="op">;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"item_num"</span><span class="op">,</span> data<span class="op">.</span><span class="at">item_num</span>)<span class="op">;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> arr <span class="op">=</span> data<span class="op">.</span><span class="at">choices</span><span class="op">;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arr<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> varName <span class="op">=</span> <span class="st">"choice"</span> <span class="op">+</span> (i <span class="op">+</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(varName<span class="op">,</span> arr[i])<span class="op">;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"API error:"</span><span class="op">,</span> err))<span class="op">;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">hideNextButton</span>()<span class="op">;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> that <span class="op">=</span> <span class="kw">this</span><span class="op">;</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">function</span>(){that<span class="op">.</span><span class="fu">clickNextButton</span>()<span class="op">;</span>})<span class="op">.</span><span class="fu">delay</span>(<span class="dv">4</span>)<span class="op">;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="images2/n16.png" class="img-fluid"></p>
+<hr>
 </section>
 <section id="step-3.4-question-block" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.4-question-block">Step 3.4 Question Block</h3>
-<p>Add a new block, labelled as ‘Question Block’.</p>
+<p>Add a new block, labelled as ‘<strong>Question</strong>’.</p>
 <p>Then, add a <strong>Multiple choice</strong> question type.</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.12.25.png" class="img-fluid"></p>
+<p><img src="images2/n17.png" class="img-fluid"></p>
 <ul>
-<li><p>Select <strong>Choices</strong> from the left panel and choose the number of response options for your test under <strong>Number of choices</strong>. Here is set to 4.</p></li>
-<li><p>Replace the ‘Click to write the question text’ with this line <code>${e://Field/next_q}</code></p></li>
-<li><p>Replace the ‘Click to write Choice 1’ with <code>${e://Field/choice1},</code>‘Click to write Choice 2’ with <code>${e://Field/choice2}</code> . Repeat this process for each of the available choices.</p></li>
-</ul>
-<p><img src="images/Screenshot 2025-12-02 at 08.13.19.png" class="img-fluid"></p>
-<p>Next, click the ‘<strong>Javascript</strong>’ button on the left panel, erase the default script, paste the following and click ‘<strong>Save</strong>’:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnReady</span>(<span class="kw">function</span>() {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 1. clear Qualtrics internal answer</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">setChoiceValue</span>(<span class="st">""</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 2. clear any recorded choice values</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> choices <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getChoices</span>()<span class="op">;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> choices<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">setChoiceValue</span>(choices[i]<span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 3. clear UI radios</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">jQuery</span>(<span class="st">"#"</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">questionId</span> <span class="op">+</span> <span class="st">" input[type='radio']"</span>)<span class="op">.</span><span class="fu">prop</span>(<span class="st">"checked"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you would like the questions to be randomly administered, select ’<strong>Choice</strong> <strong>Randomization’</strong> on the left panel.</p>
-<p><img src="images/Screenshot 2025-12-03 at 19.19.54 (2).png" class="img-fluid"></p>
-<p>Then choose ‘<strong>Display answers in a random order</strong>’ and click ‘<strong>Save</strong>’.</p>
-<p><img src="images/Screenshot 2025-12-03 at 19.20.04 (2).png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Tip for maximum performance tests:</strong> When you make the item bank in Step 2, it is convenient to paste all the correct answers into column <code>Choice1</code> and make the <code>Scores</code> column the same for all the items (e.g.&nbsp;<code>1000</code> for dichotomous items). Then, when you come to this step, you can choose ‘Display answers in a random order’.</p>
-</div>
-</div>
+<li><p>Select <strong>Choices</strong> from the left panel and choose the number of response options for your test under <strong>Number of choices</strong>. Here is set to 5 for the PPSE questionnaire.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -412,67 +384,136 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For typical performance tests including Likert-type items, for example, you should <strong>not</strong> randomize the order of the response options since these appear in a fixed order.</p>
+<p>For the TCAT: Select 4 number of choices.</p>
+</div>
+</div></li>
+<li><p>Replace the ‘Click to write the question text’ with this line of code <code>${e://Field/next_q}</code></p></li>
+<li><p>Replace the ‘Click to write Choice 1’ with <code>${e://Field/choice1},</code>‘Click to write Choice 2’ with <code>${e://Field/choice2}</code> , ‘Click to write Choice 3’ with <code>${e://Field/choice3}</code> and so on for all available choices.</p></li>
+</ul>
+<p><img src="images2/n18.png" class="img-fluid"></p>
+<p>Next, click the ‘<strong>Javascript</strong>’ button on the left side panel, and replace code, paste the following script and click ‘<strong>Save</strong>’:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnReady</span>(<span class="kw">function</span>() {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 1. clear Qualtrics internal answer</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">setChoiceValue</span>(<span class="st">""</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 2. clear any recorded choice values</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> choices <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">getChoices</span>()<span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> choices<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">setChoiceValue</span>(choices[i]<span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 3. clear UI radios</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">jQuery</span>(<span class="st">"#"</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">questionId</span> <span class="op">+</span> <span class="st">" input[type='radio']"</span>)<span class="op">.</span><span class="fu">prop</span>(<span class="st">"checked"</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>For TCAT, and for maximum-performance test in general you should consider display the answer choices in a random order. When you make the item bank information file in Step 2, it is convenient to paste all the correct answers into column <code>Choice1</code> and make the <code>Scores</code> column the same for all the items (e.g.&nbsp;<code>1000</code> for dichotomous items). Then, when you come to this step, you can follow the simple steps below to display the answer choices in random order.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For typical-performance test, like the PPSE example we demonstrate here, DO NOT display answers in random order. Please, continue to Step 3.5.</p>
+</div>
+</div>
+<ul>
+<li><p>Select the question in the ‘Question’ block.</p></li>
+<li><p>Select the <strong>‘Choice randomization’</strong> optionin the left side panel.</p></li>
+<li><p>Then choose ‘<strong>Display answers in a random order</strong>’ and click ‘<strong>Save</strong>’.</p></li>
+</ul>
+<p><img src="images2/n19.png" class="img-fluid" width="600"></p>
 </section>
 <section id="step-3.5---main-cat-block" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.5---main-cat-block">Step 3.5 - Main CAT Block</h3>
 <ol type="1">
-<li>Add a new question block named ‘cat block’</li>
-<li>Add a <strong>Text/Graphic</strong> type of question,</li>
-<li>and replace the question text with an empty space.</li>
-<li>Then, click <strong>Javascript,</strong> erase everything and add the following JS code</li>
+<li>Add a new question block</li>
+<li>Name it ‘CAT’</li>
+<li>Add a new question,</li>
+<li><strong>Text/Graphic</strong> type of question</li>
+<li>Replace the question text with an empty space.</li>
+<li>Then, click <strong>JavaScript,</strong> and replace everything with the following JavaScript code</li>
 </ol>
-<p><img src="images/Screenshot 2025-12-02 at 08.14.20.png" class="img-fluid"></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnload</span>(<span class="kw">function</span>()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>     <span class="kw">let</span> answers <span class="op">=</span> {</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">q_resp</span><span class="op">:</span> <span class="st">"${q://QID6/SelectedChoicesRecode}"</span><span class="op">,</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">item_num</span><span class="op">:</span> <span class="st">"${e://Field/item_num}"</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"API sent:"</span><span class="op">,</span> answers)<span class="op">;</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// CALL</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(<span class="st">"https://qualcat.duckdns.org/api/v0/cat"</span><span class="op">,</span> {</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">method</span><span class="op">:</span> <span class="st">"POST"</span><span class="op">,</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">headers</span><span class="op">:</span> {</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Content-Type"</span><span class="op">:</span> <span class="st">"application/json"</span><span class="op">,</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x-api-key"</span><span class="op">:</span> <span class="st">"${q://QID2/ChoiceTextEntryValue}"</span><span class="op">,</span> <span class="co">// passwrd</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"userid"</span><span class="op">:</span> <span class="st">"${e://Field/SessionID}"</span><span class="op">,</span> <span class="co">// username</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">"catName"</span><span class="op">:</span> <span class="st">"${q://QID1/ChoiceTextEntryValue}"</span> <span class="co">// CAT name</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(answers)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(res <span class="kw">=&gt;</span> res<span class="op">.</span><span class="fu">json</span>())</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> {</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"API returned:"</span><span class="op">,</span> data)<span class="op">;</span> <span class="co">// Debug</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Store the API result in Embedded Data</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"iter"</span><span class="op">,</span> data<span class="op">.</span><span class="at">iter</span>)<span class="op">;</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"next_q"</span><span class="op">,</span> data<span class="op">.</span><span class="at">item</span>)<span class="op">;</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"item_num"</span><span class="op">,</span> data<span class="op">.</span><span class="at">item_num</span>)<span class="op">;</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"se_thetahat"</span><span class="op">,</span> data<span class="op">.</span><span class="at">se_thetahat</span>)<span class="op">;</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"thetahat"</span><span class="op">,</span> data<span class="op">.</span><span class="at">thetahat</span>)<span class="op">;</span>  </span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"pat"</span><span class="op">,</span> data<span class="op">.</span><span class="at">pat</span>)<span class="op">;</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"J"</span><span class="op">,</span> data<span class="op">.</span><span class="at">pat</span><span class="op">.</span><span class="at">length</span>)<span class="op">;</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"adm_items"</span><span class="op">,</span> data<span class="op">.</span><span class="at">iter</span>)<span class="op">;</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"stop"</span><span class="op">,</span> data<span class="op">.</span><span class="at">stop</span>)<span class="op">;</span> <span class="co">//v0.2</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> arr <span class="op">=</span> data<span class="op">.</span><span class="at">choices</span><span class="op">;</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arr<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> varName <span class="op">=</span> <span class="st">"choice"</span> <span class="op">+</span> (i <span class="op">+</span> <span class="dv">1</span>)<span class="op">;</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(varName<span class="op">,</span> arr[i])<span class="op">;</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"API error:"</span><span class="op">,</span> err))<span class="op">;</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co">//Hides the next button and displays the question</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    <span class="co">//for # seconds before moving to the next page</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    <span class="co">// from Qualtrics documentation</span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">hideNextButton</span>()<span class="op">;</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> that <span class="op">=</span> <span class="kw">this</span><span class="op">;</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">function</span>(){that<span class="op">.</span><span class="fu">clickNextButton</span>()<span class="op">;</span>})<span class="op">.</span><span class="fu">delay</span>(<span class="dv">1</span>)<span class="op">;</span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="images2/n20.png" class="img-fluid"></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnload</span>(<span class="kw">function</span>()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>     <span class="kw">let</span> answers <span class="op">=</span> {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">q_resp</span><span class="op">:</span> <span class="st">"${q://QID8/SelectedChoicesRecode}"</span><span class="op">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">item_num</span><span class="op">:</span> <span class="st">"${e://Field/item_num}"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"API sent:"</span><span class="op">,</span> answers)<span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// CALL</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(<span class="st">"https://qualcat.duckdns.org/api/v0/cat"</span><span class="op">,</span> {</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">method</span><span class="op">:</span> <span class="st">"POST"</span><span class="op">,</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">headers</span><span class="op">:</span> {</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>         <span class="st">"Content-Type"</span><span class="op">:</span> <span class="st">"application/json"</span><span class="op">,</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x-api-key"</span><span class="op">:</span> <span class="st">"${q://QID2/ChoiceTextEntryValue}"</span><span class="op">,</span> <span class="co">// token</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"userid"</span><span class="op">:</span> <span class="st">"${e://Field/SessionID}"</span><span class="op">,</span> <span class="co">// username</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">"catName"</span><span class="op">:</span> <span class="st">"${q://QID1/ChoiceTextEntryValue}"</span> <span class="co">// CAT name</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(answers)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(res <span class="kw">=&gt;</span> res<span class="op">.</span><span class="fu">json</span>())</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> {</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"API returned:"</span><span class="op">,</span> data)<span class="op">;</span> </span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Store the API result in Embedded Data</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"iter"</span><span class="op">,</span> data<span class="op">.</span><span class="at">iter</span>)<span class="op">;</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"next_q"</span><span class="op">,</span> data<span class="op">.</span><span class="at">item</span>)<span class="op">;</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"item_num"</span><span class="op">,</span> data<span class="op">.</span><span class="at">item_num</span>)<span class="op">;</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"se_thetahat"</span><span class="op">,</span> data<span class="op">.</span><span class="at">se_thetahat</span>)<span class="op">;</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"thetahat"</span><span class="op">,</span> data<span class="op">.</span><span class="at">thetahat</span>)<span class="op">;</span>  </span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"pat"</span><span class="op">,</span> data<span class="op">.</span><span class="at">pat</span>)<span class="op">;</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"J"</span><span class="op">,</span> data<span class="op">.</span><span class="at">pat</span><span class="op">.</span><span class="at">length</span>)<span class="op">;</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"adm_items"</span><span class="op">,</span> data<span class="op">.</span><span class="at">iter</span>)<span class="op">;</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"stop"</span><span class="op">,</span> data<span class="op">.</span><span class="at">stop</span>)<span class="op">;</span> <span class="co">//v0.2</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> arr <span class="op">=</span> data<span class="op">.</span><span class="at">choices</span><span class="op">;</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arr<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> varName <span class="op">=</span> <span class="st">"choice"</span> <span class="op">+</span> (i <span class="op">+</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>        Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(varName<span class="op">,</span> arr[i])<span class="op">;</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"API error:"</span><span class="op">,</span> err))<span class="op">;</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">hideNextButton</span>()<span class="op">;</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> that <span class="op">=</span> <span class="kw">this</span><span class="op">;</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">function</span>(){that<span class="op">.</span><span class="fu">clickNextButton</span>()<span class="op">;</span>})<span class="op">.</span><span class="fu">delay</span>(<span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Click the drop down <strong>Tools</strong> Tab and select “<strong>Show internal IDs</strong>’</p>
+<p><img src="images2/n21.png" class="img-fluid" width="500"></p>
+<p>Make sure that the internal ID, <code>QID8</code> in this example, matches the id in the fourth line of the script you entered before. If not, edit the script by entering the correct internal ID.</p>
+<p><img src="images2/n22.png" class="img-fluid" width="250"></p>
+<p><img src="images2/n23.png" class="img-fluid" width="575"></p>
+</div>
+</div>
+<hr>
 </section>
 <section id="step-3.6---survey-flow-setup" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.6---survey-flow-setup">Step 3.6 - Survey Flow Setup</h3>
@@ -964,7 +1005,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Copyright 2025,</p>
+<p>Copyright 2026</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

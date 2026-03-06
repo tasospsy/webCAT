@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -128,8 +94,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial.html"> 
-<span class="menu-text">Tutorial</span></a>
+    <a class="nav-link" href="./procedure.html"> 
+<span class="menu-text">Procedure</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./step4.html"> 
@@ -162,14 +128,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 
 
@@ -184,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   const itemBank = document.getElementById("itemBankInput").files[0];
   
   if (!key || !catName || !itemBank) {
-  alert("Please fill in all required fields: Personal Key, CAT Name, and Item Bank file.");
+  alert("Please fill in all required fields: Token, CAT Name, and Item Bank file.");
   return; // stop further execution
 }
   //const rawData = document.getElementById("rawDataInput").files[0];
@@ -212,7 +178,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 
 </script>
-<p>Once you have filled in the actual data in the itembank, you can use the field below to upload your itembank to the server.</p>
+<p>Once you have completed the item bank information file, upload it as a CSV file to the server using the field below.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>For the TCAT: Get the completed item bank information file <a href="https://osf.io/ymh3d/files/sk9hx">here</a></li>
+<li>For the PGH9: Get the completed item bank information file <a href="https://osf.io/ymh3d">here</a></li>
+</ul>
+</div>
+</div>
 <div style="
   background-color: rgba(24, 188, 156, 0.1);  /* #18bc9c with 20% opacity */
   border: 1px solid #18bc9c;
@@ -238,8 +220,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 
     <div class="form-floating mt-2">
-      <input type="password" class="form-control" id="key" placeholder="Personal Key" autocomplete="off">
-      <label for="key">Personal Key</label>
+      <input type="password" class="form-control" id="key" placeholder="Token" autocomplete="off">
+      <label for="key">Token</label>
     </div> -->
 
     <button class="btn btn-outline-success mt-2" onclick="postFiles()">
@@ -254,100 +236,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     rawDataContainer.style.display = checkbox.checked ? "block" : "none";
   }
 </script>-->
-<p>For the purpose of this tutorial, you can use the <code>R</code> code below to create an itembank with polytomous items, or use <code>MS Excel</code> with <a href="https://osf.io/ymh3d/files/sk9hx"><strong>this file</strong></a> for an English-Dutch vocabulary test, which includes 36 dichotomous items.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Itembank structure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Example itembank in <code>R</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Example itembank in <code>Excel</code></a></li></ul>
-<div class="tab-content" data-group="language">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>The item bank must be a <code>.csv</code> (Comma-Separated Values) file, with specific column names and structure. The number of rows should correspond to the number of available items.</p>
-<ul>
-<li><p>One column must contain the item labels, labelled <code>ItemLabel</code>.</p></li>
-<li><p>A second column must contain the item texts, labelled <code>Item</code>.</p></li>
-<li><p>Subsequent columns must contain the response options, labeled <code>Choice1</code>, <code>Choice2</code>, and so on, up to the number of available choices.<br>
-<strong>Note:</strong> In this version, all items must have the same number of response options.</p></li>
-<li><p>One column labelled <code>Scores</code> must contain the item scores.&nbsp;A possible format for a dichotomous item with 4 response options could be <code>0100</code> indicating that the second response option is scored as 1 (e.g., correct answer).&nbsp;For polytomous items the scores should range from <code>0</code> up to the total number o categories minus 1, e.g., <code>0123</code> for 4 response options.</p></li>
-<li><p>Subsequent columns started with the letter <code>a</code> correspond to the IRT discrimination (slope) parameters.<br>
-For a unidimensional structure, there is only one parameter, labelled <code>a1.</code><br>
-For multidimensional structures, <code>a1</code> corresponds to the first factor, <code>a2</code> to the second factor, and so on.</p></li>
-<li><p>Similarly, columns started with the letter <code>d</code> correspond to the IRT difficulty (location or intercept) parameters.<br>
-For a unidimensional structure, there is only one parameter, labelled <code>d.</code><br>
-For multidimensional structures, <code>d1</code> corresponds to the first threshold, <code>d2</code> to the second threshold, and so on, up to the number of available thresholds.</p></li>
-</ul>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>In this example we create an itembank for the PHQ-9 questionnaire. The PHQ-9 consists of nine items measuring depression symptoms with four ordered response options. The items have been calibrated using publicly available data with a Graded Response Model.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>wd <span class="ot">&lt;-</span> <span class="st">'[PATH TO YOUR WORKING DIRECTORY]'</span> <span class="co"># replace this with your working directory</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># read the blueprint item bank:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>item_bank <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.path</span>(wd, <span class="st">"itembank_blueprint.csv"</span>), <span class="at">colClasses =</span> <span class="fu">c</span>(<span class="at">Scores =</span> <span class="st">"character"</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># We fill in the columns manually columnwise:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>item_bank<span class="sc">$</span>ItemLabel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"DPQ010"</span>, <span class="st">"DPQ020"</span>, <span class="st">"DPQ030"</span>, <span class="st">"DPQ040"</span>, <span class="st">"DPQ050"</span>, <span class="st">"DPQ060"</span>, <span class="st">"DPQ070"</span>, <span class="st">"DPQ080"</span>, <span class="st">"DPQ090"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>item_bank<span class="sc">$</span>Item <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Over the last 2 weeks, how often have you been bothered by little interest or pleasure in doing things"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Over the last 2 weeks, how often have you been bothered by feeling down, depressed, or hopeless"</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Over the last 2 weeks, how often have you been bothered by trouble falling or staying asleep, or sleeping too much"</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Over the last 2 weeks, how often have you been bothered by feeling tired or having little energy"</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Over the last 2 weeks, how often have you been bothered by poor appetite or overeating"</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Over the last 2 weeks, how often have you been bothered by feeling bad about yourself or that you are a failure or have let yourself or your family down"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Over the last 2 weeks, how often have you been bothered by trouble concentrating on things, such as reading the newspaper or watching television"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Over the last 2 weeks, how often have you been bothered by moving or speaking so slowly that other people could have noticed. Or the opposite being so figety or restless that you have been moving around a lot more than usual"</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Over the last 2 weeks, how often have you been bothered by thoughts that you would be better off dead, or of hurting yourself"</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># In this example all questions have the same answer options</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>answer_options <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>, <span class="st">"Several days"</span>, <span class="st">"More than half the days"</span>, <span class="st">"Nearly every day"</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># We assign this options to the correct columns</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>item_bank[, <span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>] <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">apply</span>(item_bank[, <span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>], <span class="dv">1</span>, <span class="cf">function</span>(x) answer_options))</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># adding discrimination parameter values manually</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>item_bank<span class="sc">$</span>a1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.424091</span>, <span class="fl">3.122244</span>, <span class="fl">1.632741</span>, <span class="fl">1.974066</span>,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">1.880244</span>, <span class="fl">2.759441</span>, <span class="fl">2.202966</span>, <span class="fl">2.103382</span>,</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">2.303624</span>)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># adding location/difficulty parameter values manually</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: for a "graded" model should be ordered within each item</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>item_bank<span class="sc">$</span>d1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.08369022</span>, <span class="sc">-</span><span class="fl">2.48929807</span>, <span class="sc">-</span><span class="fl">0.70986867</span>, <span class="sc">-</span><span class="fl">0.07750205</span>,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                  <span class="sc">-</span><span class="fl">1.77299047</span>, <span class="sc">-</span><span class="fl">3.06577563</span>, <span class="sc">-</span><span class="fl">2.62351599</span>, <span class="sc">-</span><span class="fl">3.37522945</span>,</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>                  <span class="sc">-</span><span class="fl">5.17894765</span>)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>item_bank<span class="sc">$</span>d2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">4.309610</span>, <span class="sc">-</span><span class="fl">5.251526</span>, <span class="sc">-</span><span class="fl">2.414099</span>, <span class="sc">-</span><span class="fl">2.630950</span>,</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>                  <span class="sc">-</span><span class="fl">3.472991</span>, <span class="sc">-</span><span class="fl">5.215560</span>, <span class="sc">-</span><span class="fl">4.455207</span>, <span class="sc">-</span><span class="fl">4.905570</span>,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>                  <span class="sc">-</span><span class="fl">6.706078</span>)</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>item_bank<span class="sc">$</span>d3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">5.602148</span>, <span class="sc">-</span><span class="fl">6.673016</span>, <span class="sc">-</span><span class="fl">3.288573</span>, <span class="sc">-</span><span class="fl">3.694516</span>,</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>                  <span class="sc">-</span><span class="fl">4.441030</span>, <span class="sc">-</span><span class="fl">6.354125</span>, <span class="sc">-</span><span class="fl">5.359964</span>, <span class="sc">-</span><span class="fl">5.962049</span>,</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>                  <span class="sc">-</span><span class="fl">7.498389</span>)</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co"># save the item bank</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(item_bank, <span class="fu">file.path</span>(wd, <span class="st">"itembank.csv"</span>), <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="re">END</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<ul>
-<li><p>Generate a unidimensional itembank blueprint for 36 dichotomous items with four response options each.</p></li>
-<li><p>Open Microsoft Excel.</p></li>
-<li><p>Select the first column and go to <strong>Data</strong> tab — (<strong>Split) Text to Columns.</strong></p></li>
-</ul>
-<p><img src="images/Screenshot 2025-12-19 at 11.19.46.png" class="img-fluid"></p>
-<ul>
-<li>Then select <strong>Comma</strong> delimiter and click <strong>Apply</strong> (or <strong>Finish</strong>).</li>
-</ul>
-<p><img src="images/Screenshot 2025-12-19 at 11.20.12.png" class="img-fluid" width="800"></p>
-<ul>
-<li><p>Enter the data of your itembank in all columns manually.</p></li>
-<li><p>Click <strong>File — Save As…</strong> and save the itembank as <strong>.csv</strong> file.</p></li>
-</ul>
-<p>The final item bank of the English-Dutch vocabulary test can be found <a href="https://osf.io/ymh3d/files/sk9hx">here</a>.</p>
-</div>
-</div>
-</div>
-<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
-<ul class="nav nav-tabs" role="tablist"></ul>
-<div class="tab-content" data-group="language">
-
-</div>
-</div>
 
 
 
@@ -768,7 +656,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Copyright 2025,</p>
+<p>Copyright 2026</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

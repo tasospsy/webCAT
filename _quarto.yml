@@ -6,13 +6,13 @@ website:
   title: "webCAT"
   favicon: images/favicon.png
   back-to-top-navigation: true
-  page-footer: "Copyright 2025, "
+  page-footer: "Copyright 2026"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - href: tutorial.qmd
-        text: Tutorial
+      - href: procedure.qmd
+        text: Procedure
       - href: step4.qmd
         text: Results
       - href: ref.qmd
@@ -32,6 +32,7 @@ format:
     css: styles.css
     toc: true
     code-fold: true
+    page-layout: full
 
     
 editor: visual

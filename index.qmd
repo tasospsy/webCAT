@@ -2,47 +2,110 @@
 title: "Home"
 ---
 
-With **webCAT**, you can easily administer a Qualtrics test or survey using Computerized Adaptive Testing (CAT) methods. Before starting, generate a personal access key by clicking the button below. This unique key can be used for multiple tests or surveys. Under the *Tutorial* tab, you will find all the necessary steps for using the webCAT application and setting up the Qualtrics survey. Additional details are available in the published version of the tutorial \[here\].
+The **webCAT** application brings Computerized Adaptive Testing (CAT) and Multi-Stage Testing (MST) to your [**Qualtrics**](https://www.qualtrics.com/) tests, surveys, and questionnaires.
+
+In CAT, each test adapts to the respondent in real time. Participants see only the items that are most relevant to them, making the experience shorter, more engaging, and more precise.
+
+------------------------------------------------------------------------
+
+**webCAT** can implement
+
+-   both fixed-length CAT and variable-length CAT based on either the estimated item parameters from an IRT model ~~or the raw items scores of the respondents in a norm sample~~.
+
+-   MST based either the estimated item parameters from an IRT model, the raw items scores of the respondents in a norm sample, or the *p*-values reported in the literature (Approximate MST).
+
+Detailed instructions are provided under the *Procedure* tab.
+
+------------------------------------------------------------------------
+
+### The access token
+
+-   If you would like to use your own data, you must first generate an access token by clicking the "Generate Token" button below.
+
+-   If you would like to use one of the example datasets or have previously generated a token, you can proceed directly to the Procedure tab.
 
 ```{=html}
 <!-- MAIN HTML PAGE -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <div style="
   background-color: rgba(24, 188, 156, 0.1);  /* #18bc9c with 20% opacity */
   border: 1px solid #18bc9c;
   padding: 20px;
 ">
-  <div class="d-flex gap-3 mt-2">
+  <div class="d-flex gap-0 mt-2">
   <!-- 1st row -->
     <fieldset class="flex-fill"> 
-    <button type="button" class="btn btn-outline-success" onclick="newKey()">Generate Personal Key</button>
+    <button type="button" class="btn btn-outline-success" onclick="newKey()">Generate Token</button>
     </fieldset>
     <fieldset class="flex-fill">
     
     <div class="flex-fill">
-      Your Personal Key:
+      The Generated Token Is:
   <code id="key" style="font-size: 1.2rem; color: orange;"> </code>
     </div>
     </fieldset>
   </div>
 </div>
+<div class="d-flex mt-2 mb-2 gap-0">
+  <small id="emailHelp" class="form-text text-muted">After the token is generated, enter your email address and click Send to receive the generated token by email.</small>
+  </div>
+  <div class="d-flex mt-3 mb-2 gap-0">
+      
+      <input id="email" type="text" class="form-control w-50" placeholder="Email Address"  aria-describedby="button-addon2">
+      <button class="btn btn-primary" type="button" onclick="sendEmail()">   <i class="fa-solid fa-paper-plane"></i>
+</button>
+  </div>
+  
+  
 ```
 ```{=html}
 <script>
 function newKey() {
   fetch("https://qualcat.duckdns.org/api/v0/personal-key", {
-    method: 'GET'
+    method: 'GET', 
   })
   .then(r => r.json())
   .then(data => {
     const key = data[0];
     document.querySelector("#key").textContent = key;
-    alert("Please Copy and Paste the key somewhere safe.\n If you ever forget it, please contact us. ");
+    alert("Please Copy and Paste the token somewhere safe or fill in your email address below to receive it via email.");
   })
   .catch(err => alert("Error: " + err));
 }
-
 </script>
 ```
-::: callout-note
-To follow the example in the current tutorial you do **not** need to generate new personal key. You can continue to the tab **Tutorial.**
-:::
+```{=html}
+<script>
+function sendEmail() {
+    const token = document.querySelector("#key").textContent;
+    const email = document.getElementById("email").value;
+  if (token == " ") {
+  alert("Please generate a new token first.");
+  return;}
+  if (!email) {
+  alert("Please fill in your email.");
+  return;}
+  //console.log(token); console.log(email);
+ fetch("https://qualcat.duckdns.org/api/v0/SendTokenToEmail", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({token, email})
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(err => alert("Error: " + err));
+}
+</script>
+```
+```{=html}
+<div class="text-end">
+  <a href="procedure.html" class="btn btn-success btn-lg">
+    Get Started →
+  </a>
+</div>
+```

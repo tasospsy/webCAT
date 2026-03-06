@@ -2,9 +2,29 @@
 #title: "Step 0: Create Itembank Blueprint"
 ---
 
-This tutorial requires the upload of an itembank at **Step 1** with a specific structure. To ensure that no errors occur at the later stages and that the column structure is correct, you can download an itembank blueprint. This can be used as a template to fill in the actual data for your test/survey.
+This step is required only if you would like to construct your own item bank file. If you would like to use one of the examples, please skip this step and go to Step 1.
 
-Please enter the desired properties for your test to the fields below and click **'Get Itembank Blueprint'.**
+It is essential that the file has the correct structure^1^ if you want to use your own item bank. In this step, you can download a blueprint that you can edit and fill in with all the necessary information.
+
+::: {.callout-tip collapse="true"}
+## ^1^Details on the item bank structure
+
+The item bank information file must be a Comma-Separated Values (.csv) file, with specific column names and a specific structure. The number of rows should correspond to the number of available items.
+
+-   The first column, labelled `ItemLabel`, must contain the item labels.
+
+-   The second column, labelled `Item`, must contain the item stems.
+
+-   The next columns must contain the response options, labeled `Choice1`, `Choice2`, and so on, up to the number of available choices.\
+    **Note:** In this version, all items must have the same number of response options.
+
+-   The next column, labelled `Scores`, must contain the item scores. A possible format for a dichotomous item with 4 response options could be `0100` indicating that the second response option is scored as 1 (e.g., correct answer). For polytomous items the scores should range from `0` up to the total number of categories minus 1, e.g., `0123` for 4 response options.
+
+-   The next columns contain the items' discrimination (slope) parameters.\
+    For $l$ dimensions, $l$ columns are required, labelled `a1`, `a2`, etc. For a unidimensional structure, there is only one parameter, and therefore one column labelled `a1.`
+
+-   The next column, labelled `d`, contains the items' difficulty (location or intercept) parameters.
+:::
 
 ```{=html}
 <!-- MAIN HTML PAGE -->
@@ -94,10 +114,4 @@ async function sendData() {
   }
 }
 </script>
-<hr>
-```
-```{r, include = FALSE}
-#library(DT)
-#data.path <- "https://sharestats.github.io/itembank/sharestats_website.csv"
-
 ```

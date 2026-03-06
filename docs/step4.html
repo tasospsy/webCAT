@@ -94,8 +94,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial.html"> 
-<span class="menu-text">Tutorial</span></a>
+    <a class="nav-link" href="./procedure.html"> 
+<span class="menu-text">Procedure</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./step4.html" aria-current="page"> 
@@ -128,14 +128,14 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -144,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -156,8 +156,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Enter the Test Name and the Personal Key to get the results.<br>
-You can filter by date.</p>
+<p>Enter the Test Name and the Access Token to get the results.<br>
+You can also filter by date.</p>
 <script>
 function downloadData() {
   const key = document.getElementById("floatingPassword").value;
@@ -168,7 +168,7 @@ function downloadData() {
     to: document.getElementById("toDateInput").value,
   };
     if (!key || !params.catName) {
-  alert("Please fill in all required fields: Personal Key & CAT Name.");
+  alert("Please fill in all required fields: Access Token & Test Name.");
     }
   
   let url = `https://qualcat.duckdns.org/api/v0/get-data?catName=${encodeURIComponent(params.catName)}&from=${encodeURIComponent(params.from)}&to=${encodeURIComponent(params.to)}`
@@ -210,14 +210,14 @@ function downloadData() {
   <!-- 1st row -->
   <fieldset class="flex-fill">
     <div class="form-floating">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Personal Key" autocomplete="off">
-    <label for="floatingPassword">Personal Key*</label>
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Access Token" autocomplete="off">
+    <label for="floatingPassword">Access Token*</label>
     </div>
   </fieldset>
   <fieldset class="flex-fill">
     <div class="form-floating">
     <input type="text" class="form-control" id="catNameInput" placeholder="CAT Name">
-    <label for="catNameInput">CAT Name*</label>
+    <label for="catNameInput">Test Name*</label>
     </div>
   </fieldset>
  
@@ -243,6 +243,20 @@ function downloadData() {
   </fieldset>
       
   </div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the TCAT: Enter <code>TCAT</code> as the test name and <code>Tok1234</code> as the access token.</p>
+<p>For the PPSE: Enter <code>PPSE</code> as the test name and <code>Tok1234</code> as the access token.</p>
+</div>
 </div>
 
 
@@ -664,7 +678,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Copyright 2025,</p>
+<p>Copyright 2026</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

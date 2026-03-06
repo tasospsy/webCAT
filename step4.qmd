@@ -2,8 +2,8 @@
 title: "Step 4: Results"
 ---
 
-Enter the Test Name and the Personal Key to get the results.\
-You can filter by date.
+Enter the Test Name and the Access Token to get the results.\
+You can also filter by date.
 
 ```{=html}
 <script>
@@ -16,7 +16,7 @@ function downloadData() {
     to: document.getElementById("toDateInput").value,
   };
     if (!key || !params.catName) {
-  alert("Please fill in all required fields: Personal Key & CAT Name.");
+  alert("Please fill in all required fields: Access Token & Test Name.");
     }
   
   let url = `https://qualcat.duckdns.org/api/v0/get-data?catName=${encodeURIComponent(params.catName)}&from=${encodeURIComponent(params.from)}&to=${encodeURIComponent(params.to)}`
@@ -60,14 +60,14 @@ function downloadData() {
   <!-- 1st row -->
   <fieldset class="flex-fill">
     <div class="form-floating">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Personal Key" autocomplete="off">
-    <label for="floatingPassword">Personal Key*</label>
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Access Token" autocomplete="off">
+    <label for="floatingPassword">Access Token*</label>
     </div>
   </fieldset>
   <fieldset class="flex-fill">
     <div class="form-floating">
     <input type="text" class="form-control" id="catNameInput" placeholder="CAT Name">
-    <label for="catNameInput">CAT Name*</label>
+    <label for="catNameInput">Test Name*</label>
     </div>
   </fieldset>
  
@@ -95,3 +95,8 @@ function downloadData() {
   </div>
 </div>
 ```
+::: callout-note
+For the TCAT: Enter `TCAT` as the test name and `Tok1234` as the access token.
+
+For the PPSE: Enter `PPSE` as the test name and `Tok1234` as the access token.
+:::
