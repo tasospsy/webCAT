@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "webCAT",
+    "title": "Home",
     "section": "",
     "text": "The webCAT application brings Computerized Adaptive Testing (CAT) and Multi-Stage Testing (MST) to your Qualtrics tests, surveys, and questionnaires.\nIn CAT, each test adapts to the respondent in real time. Participants see only the items that are most relevant to them, making the experience shorter, more engaging, and more precise.\n\nwebCAT can implement\n\nboth fixed-length CAT and variable-length CAT based on either the estimated item parameters from an IRT model or the raw items scores of the respondents in a norm sample.\nMST based either the estimated item parameters from an IRT model, the raw items scores of the respondents in a norm sample, or the p-values reported in the literature (Approximate MST).\n\nDetailed instructions are provided under the Procedure tab.\n\n\nThe access token\n\nIf you would like to use your own data, you must first generate an access token by clicking the “Generate Token” button below.\nIf you would like to use one of the example datasets or have previously generated a token, you can proceed directly to the Procedure tab.\n\n\n\n\n\n  \n  \n     \n    Generate Token\n    \n    \n    \n    \n      The Generated Token Is:\n   \n    \n    \n  \n\n\n  After the token is generated, enter your email address and click Send to receive the generated token by email.\n  \n  \n      \n      \n         \n\n  \n  \n  \n\n\n\n  \n    Get Started →\n  \n\n\n\n\n\n Back to top"
   },
