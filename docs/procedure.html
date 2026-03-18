@@ -207,12 +207,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#step-3.1---setup-block" id="toc-step-3.1---setup-block" class="nav-link" data-scroll-target="#step-3.1---setup-block">Step 3.1 - Setup Block</a></li>
   <li><a href="#step-3.2-introduction-block-optional" id="toc-step-3.2-introduction-block-optional" class="nav-link" data-scroll-target="#step-3.2-introduction-block-optional">Step 3.2 Introduction Block (<em>optional</em>)</a></li>
-  <li><a href="#step-3.2-extra-block-optional" id="toc-step-3.2-extra-block-optional" class="nav-link" data-scroll-target="#step-3.2-extra-block-optional">Step 3.2 Extra Block (<em>optional</em>)</a></li>
-  <li><a href="#step-3.3-cat-initialization-block" id="toc-step-3.3-cat-initialization-block" class="nav-link" data-scroll-target="#step-3.3-cat-initialization-block">Step 3.3 CAT Initialization Block</a></li>
-  <li><a href="#step-3.4-question-block" id="toc-step-3.4-question-block" class="nav-link" data-scroll-target="#step-3.4-question-block">Step 3.4 Question Block</a></li>
-  <li><a href="#step-3.5---main-cat-block" id="toc-step-3.5---main-cat-block" class="nav-link" data-scroll-target="#step-3.5---main-cat-block">Step 3.5 - Main CAT Block</a></li>
-  <li><a href="#step-3.6---survey-flow-setup" id="toc-step-3.6---survey-flow-setup" class="nav-link" data-scroll-target="#step-3.6---survey-flow-setup">Step 3.6 - Survey Flow Setup</a></li>
-  <li><a href="#step-3.7---publish-the-testsurvey" id="toc-step-3.7---publish-the-testsurvey" class="nav-link" data-scroll-target="#step-3.7---publish-the-testsurvey">Step 3.7 - Publish the Test/Survey</a></li>
+  <li><a href="#step-3.3-extra-block-optional" id="toc-step-3.3-extra-block-optional" class="nav-link" data-scroll-target="#step-3.3-extra-block-optional">Step 3.3 Extra Block (<em>optional</em>)</a></li>
+  <li><a href="#step-3.4-cat-initialization-block" id="toc-step-3.4-cat-initialization-block" class="nav-link" data-scroll-target="#step-3.4-cat-initialization-block">Step 3.4 CAT Initialization Block</a></li>
+  <li><a href="#step-3.5-question-block" id="toc-step-3.5-question-block" class="nav-link" data-scroll-target="#step-3.5-question-block">Step 3.5 Question Block</a></li>
+  <li><a href="#step-3.6---main-cat-block" id="toc-step-3.6---main-cat-block" class="nav-link" data-scroll-target="#step-3.6---main-cat-block">Step 3.6 - Main CAT Block</a></li>
+  <li><a href="#step-3.7---survey-flow-setup" id="toc-step-3.7---survey-flow-setup" class="nav-link" data-scroll-target="#step-3.7---survey-flow-setup">Step 3.7 - Survey Flow Setup</a></li>
+  <li><a href="#step-3.8---publish-the-testsurvey" id="toc-step-3.8---publish-the-testsurvey" class="nav-link" data-scroll-target="#step-3.8---publish-the-testsurvey">Step 3.8 - Publish the Test/Survey</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -227,7 +227,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="sec-tutorial">Procedure</h2>
 <p>This procedure shows you how to use webCAT using either your own item bank, <strong>or</strong> one of the two item banks that are offered as examples. These include:</p>
 <ol type="1">
-<li><p>a 36 maximum-performance item bank named TCAT, for an Dutch-English Vocabulary test with dichotomous items calibrated using a 2-parameter logistic model</p></li>
+<li><p>a 36 maximum-performance item bank named TCAT, for Dutch-English Vocabulary test with dichotomous items calibrated using a two-parameter logistic model</p></li>
 <li><p>a 19 typical-performance item bank of the PROMIS Pediatric Psychological Stress Experiences (PPSE) questionnaire (self-report; 8-17yrs old; see <a href="https://doi.org/10.1093/jpepsy/jsy010">Bevans et al., 2018</a>), with 19 polytomous items, calibrated using a graded response model.</p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -303,11 +303,11 @@ Note
 <li><p>The first column, labelled <code>ItemLabel</code>, must contain the item labels.</p></li>
 <li><p>The second column, labelled <code>Item</code>, must contain the item stems.</p></li>
 <li><p>The next columns must contain the response options, labeled <code>Choice1</code>, <code>Choice2</code>, and so on, up to the number of available choices.<br>
-<strong>Note:</strong> In this version, all items must have the same number of response options.</p></li>
+<strong>Note:</strong> All items must have the same number of response options.</p></li>
 <li><p>The next column, labelled <code>Scores</code>, must contain the item scores.&nbsp;A possible format for a dichotomous item with 4 response options could be <code>0100</code> indicating that the second response option is scored as 1 (e.g., correct answer).&nbsp;For polytomous items the scores should range from <code>0</code> up to the total number of categories minus 1, e.g., <code>0123</code> for 4 response options.</p></li>
 <li><p>The next columns contain the items’ discrimination (slope) parameters.<br>
 For <span class="math inline">\(l\)</span> dimensions, <span class="math inline">\(l\)</span> columns are required, labelled <code>a1</code>, <code>a2</code>, etc. For a unidimensional structure, there is only one parameter, and therefore one column labelled <code>a1.</code></p></li>
-<li><p>The next column, labelled <code>d</code>, contains the items’ difficulty (location or intercept) parameters.</p></li>
+<li><p>The next column, labelled <code>d</code>, contains the items’ difficulty parameters (also known as “location” or “intercept”) .</p></li>
 </ul>
 </div>
 </div>
@@ -501,7 +501,7 @@ Note
 <h2 class="anchored" data-anchor-id="step-2-configuration-of-the-test">Step 2: Configuration of the test</h2>
 <p>In Step 2, first select the IRT model that was used to obtain the item parameters in the item bank information file.</p>
 <p>Second, select the type of CAT that is required: If a fixed-length CAT is selected, the number of items (e.g., the test length) must also be specified. If a variable-length CAT is selected, the required level of measurement precision should be specified (default is <span class="math inline">\(SE(\hat\theta) = 0.3\)</span>).</p>
-<p>Third the item parameterization must be specified (i.e., which parameters define the item response function; varies among different softwares).</p>
+<p>Third, the item parameterization must be specified (i.e., which parameters define the item response function; varies among different softwares).</p>
 <div style="
   background-color: rgba(24, 188, 156, 0.1);  /* #18bc9c with 20% opacity */
   border: 1px solid #18bc9c;
@@ -534,7 +534,7 @@ Note
       <div class="form-check">
         <input class="form-check-input" type="radio" name="optionsRadios" id="param2" value="IRTparam">
         <label class="form-check-label" for="param2">
-           `Classic` IRT Parameterization
+           Classic IRT Parameterization
         </label>
       </div>
 
@@ -685,32 +685,20 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For the TCAT, a configuration file has already been created for a fixed-length CAT of 10 items. The item bank was calibrated using a 2PL model.</p>
-<p>For the PPSE, a configuration file has already been created for a variable-length CAT with stopping rule <span class="math inline">\(SE(\hat\theta) = 0.3\)</span>. The item bank was calibrated using a graded response model.</p>
+<p>For the two examples, configuration files have already been created.</p>
+<p>For the TCAT, a fixed-length CAT of 10 items was set up and the item bank was calibrated using a 2PL model.</p>
+<p>For the PPSE, a variable-length CAT with stopping rule <span class="math inline">\(SE(\hat\theta) = 0.3\)</span> was set up and the item bank was calibrated using a graded response model.</p>
 </div>
 </div>
 </section>
 <section id="step-3-qualtrics-set-up" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-qualtrics-set-up">Step 3: Qualtrics set up</h2>
-<p>Step 3 includes all the necessary steps to create the Qualtrics survey/test. We demonstrate the procedure using the PPSE item bank; however, you can follow the same steps using your own item bank. To use the TCAT item bank, specific instructions are provided where necessary.</p>
+<p>Step 3 includes all the necessary steps to create the Qualtrics survey/test. We demonstrate the procedure using the PPSE item bank; however, you can follow the same steps using your own item bank. To use the TCAT item bank, additional instructions are provided in the substeps below where necessary.</p>
 <section id="step-3.1---setup-block" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.1---setup-block">Step 3.1 - Setup Block</h3>
-<p>Enter the Qualtrics website and log in with your credentials.</p>
+<p>Go to the Qualtrics XM website via your institution and log in with your credentials.</p>
 <p>Go to <strong>Home page</strong> — <strong>Create a new project</strong> — <strong>Survey</strong> — and click <strong>Get started.</strong></p>
-<p>Enter a Name for the Qualtrics project.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The Qualtric project name is <strong>not</strong> the same as the Test name you specified on this tutorial.</p>
-</div>
-</div>
+<p>Enter a Name of your choice for the Qualtrics project.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images2/n1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></p>
@@ -729,25 +717,25 @@ Note
 <p><img src="images2/n3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>Then, click on the three dots menu on the right corner of the ‘Test Name’ question and select <strong>Copy</strong> to create new question of similar type.</p>
+<p>Then, click on the three dots at the top right corner of the ‘Test Name’ question and click <strong>Copy</strong> to create new question of similar type.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images2/n4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
 </figure>
 </div>
-<p>Change the question text to ’<strong>Access Token’</strong> at the second question.</p>
+<p>Change the text of the second question into ’<strong>Access Token’</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images2/n5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>These two questions belong to a single block, which will be the first block in your test. This block is crucial, as it links the Qualtrics survey to the correct test specifications you set up in Steps 1 and 2.</p>
+<p>These two questions make up a single block, which will be the first block in your test. This block is crucial, as it links the Qualtrics survey to the test specifications you set up in Steps 1 and 2.</p>
 <p>Rename the first Block as ‘<strong>Setup</strong>’ block, by changing the label above the first question.</p>
 <p><img src="images2/n6.png" class="img-fluid"></p>
-<p>Then, for the ’<strong>Test Name’</strong> question, select <strong>Add requirements</strong> and <strong>Force response</strong> under the <strong>Response Requirements</strong> options on the left panel.</p>
-<p>Repeat for the ’<strong>Access Token’</strong> question.</p>
+<p>Then, for the <strong>‘Test Name’</strong> question, select <strong>Add requirements</strong> and <strong>Force response</strong> under the <strong>Response Requirements</strong> options on the left panel.</p>
+<p>Similarly, add <strong>Force response</strong> requirement for the <strong>‘Access Token’</strong> question.</p>
 <p><img src="images2/n7.png" class="img-fluid"></p>
-<p>Then, for the ‘<strong>Test Name’</strong> question select’<strong>Default choices</strong>’ from the options on the left panel. Enter the name of your test in the first question as the default choice, and click ‘<strong>Save</strong>’.</p>
+<p>Then, for the <strong>‘Test Name’</strong> question select <strong>Default choices</strong> from the options on the left panel. Enter the name of your test in the first question as the default choice, and click <strong>Save</strong>.</p>
 <p>Then repeat the process for the second question, entering the access token that you generated previously.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -764,7 +752,7 @@ Note
 </div>
 <p><img src="images2/n8.png" class="img-fluid"></p>
 <p><img src="images2/n9.png" class="img-fluid"></p>
-<p>Then select the ‘<strong>Access Token</strong>’ question and click the JavaScript option on the left side panel.</p>
+<p>Then select the <strong>‘Access Token’</strong> question and click the JavaScript option on the left side panel.</p>
 <p><img src="images2/n10.png" class="img-fluid"></p>
 <p>Replace the default lines of code in the pop-up window with the script below and click <strong>Save.</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnload</span>(<span class="kw">function</span>() {</span>
@@ -777,22 +765,22 @@ Note
 </section>
 <section id="step-3.2-introduction-block-optional" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.2-introduction-block-optional">Step 3.2 Introduction Block (<em>optional</em>)</h3>
-<p>This block consists of a text question. It is optional and can be used to display introductory text for your study, such as guidelines, ethical approvals, participation consent, and contact information.</p>
+<p>This block consists of a text question. It is optional and can be used to display introductory text for your study, such as guidelines, ethical approvals, participants’ informed consent, and contact information.</p>
 <ol type="1">
 <li><p>Add a new block by selecting <strong>Add Block</strong></p></li>
 <li><p>Rename the new block as ‘Intro’</p></li>
-<li><p>Add new question to the block by selecting ’<strong>Add new question’</strong></p></li>
-<li><p>and then ‘<strong>Text / Graphic</strong>’ type</p></li>
+<li><p>Add a new question to the block by selecting <strong>Add new question</strong>,</p></li>
+<li><p>and then <strong>Text / Graphic</strong> type</p></li>
 </ol>
 <p><img src="images2/n12.png" class="img-fluid"></p>
-<p>This does not serve as an actual question; rather, it displays all the necessary information for the test user.</p>
-<p>In this example we add some plain text:</p>
+<p>This does not serve as an actual question; rather, it displays all the necessary information for the test participant.</p>
+<p>In this example we add some plain text for illustrative purpose:</p>
 <p><img src="images/Screenshot 2025-12-19 at 08.18.16.png" class="img-fluid"></p>
 <hr>
 </section>
-<section id="step-3.2-extra-block-optional" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.2-extra-block-optional">Step 3.2 Extra Block (<em>optional</em>)</h3>
-<p>Similarly to the Intro block, you can add an additional block, here labelled as <strong>‘Extra’</strong>, with questions you would like to appear before the actual CAT. These may include demographic or other personal questions. In this example, the ‘Extra’ block consists of two <em>dummy</em> questions: One is for gender and the other is for age.</p>
+<section id="step-3.3-extra-block-optional" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.3-extra-block-optional">Step 3.3 Extra Block (<em>optional</em>)</h3>
+<p>Similarly to the ‘Intro’ block, you can add an additional block, here labelled as <strong>‘Extra’</strong>, with questions you would like to appear before the actual CAT. These may include demographic or other personal questions. In this example, the ‘Extra’ block consists of two questions for illustrative purposes: One asking for the participant’s gender and the other asking for the participant’s age.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -809,8 +797,8 @@ Note
 <p><img src="images2/n13.png" class="img-fluid"></p>
 <hr>
 </section>
-<section id="step-3.3-cat-initialization-block" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.3-cat-initialization-block">Step 3.3 CAT Initialization Block</h3>
+<section id="step-3.4-cat-initialization-block" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.4-cat-initialization-block">Step 3.4 CAT Initialization Block</h3>
 <p>Similarly,</p>
 <ol type="1">
 <li>Add a new block,</li>
@@ -823,10 +811,10 @@ Note
 <p><img src="images2/n14.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>For the ‘Loading…’ question, select the ’<strong>Javascript’</strong> option from the left panel.</p>
+<p>For the ‘Loading…’ question, select the <strong>Javascript</strong> option from the left panel.</p>
 <p><img src=".png" class="img-fluid"></p>
 <p><img src="images2/n15.png" class="img-fluid"></p>
-<p>Replace the default lines of code in the pop-up window with the script below and click ‘<strong>Save</strong>’:</p>
+<p>Replace the default lines of code in the pop-up window with the script below and click <strong>Save</strong>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnload</span>(<span class="kw">function</span>() {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> answers <span class="op">=</span> {</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      <span class="co">// empty for now</span></span>
@@ -865,8 +853,8 @@ Note
 <p><img src="images2/n16.png" class="img-fluid"></p>
 <hr>
 </section>
-<section id="step-3.4-question-block" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.4-question-block">Step 3.4 Question Block</h3>
+<section id="step-3.5-question-block" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.5-question-block">Step 3.5 Question Block</h3>
 <p>Add a new block, labelled as ‘<strong>Question</strong>’.</p>
 <p>Then, add a <strong>Multiple choice</strong> question type.</p>
 <p><img src="images2/n17.png" class="img-fluid"></p>
@@ -889,7 +877,7 @@ Note
 <li><p>Replace the ‘Click to write Choice 1’ with <code>${e://Field/choice1},</code>‘Click to write Choice 2’ with <code>${e://Field/choice2}</code> , ‘Click to write Choice 3’ with <code>${e://Field/choice3}</code> and so on for all available choices.</p></li>
 </ul>
 <p><img src="images2/n18.png" class="img-fluid"></p>
-<p>Next, click the ‘<strong>Javascript</strong>’ button on the left side panel, and replace code, paste the following script and click ‘<strong>Save</strong>’:</p>
+<p>Next, click the <strong>Javascript</strong> button on the left side panel, replace the code pasting the following script into the field and click <strong>Save</strong>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnReady</span>(<span class="kw">function</span>() {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 1. clear Qualtrics internal answer</span></span>
@@ -915,7 +903,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For TCAT, and for maximum-performance test in general you should consider display the answer choices in a random order. When you make the item bank information file in Step 2, it is convenient to paste all the correct answers into column <code>Choice1</code> and make the <code>Scores</code> column the same for all the items (e.g.&nbsp;<code>1000</code> for dichotomous items).</p>
+<p>For TCAT, and for maximum-performance test in general you should consider to display the answer choices in a random order. When you make the item bank information file in Step 2, it is convenient to paste all the correct answers into column <code>Choice1</code> and make the <code>Scores</code> column the same for all the items (e.g.&nbsp;<code>1000</code> for dichotomous items).</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -939,8 +927,8 @@ Warning
 <p><img src="images2/n19.png" class="img-fluid" width="600"></p>
 <hr>
 </section>
-<section id="step-3.5---main-cat-block" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.5---main-cat-block">Step 3.5 - Main CAT Block</h3>
+<section id="step-3.6---main-cat-block" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.6---main-cat-block">Step 3.6 - Main CAT Block</h3>
 <ol type="1">
 <li>Add a new question block</li>
 <li>Name it ‘CAT’</li>
@@ -1001,41 +989,46 @@ Warning
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Click the drop down <strong>Tools</strong> Tab and select “<strong>Show internal IDs</strong>’</p>
+<p>Click the drop down <strong>Tools</strong> Tab and select <strong>Show internal IDs</strong>.</p>
 <p><img src="images2/n21.png" class="img-fluid" width="500"></p>
-<p>Make sure that the internal ID, <code>QID8</code> in this example, matches the id in the fourth line of the script you entered before. If not, edit the script by entering the correct internal ID.</p>
-<p><img src="images2/n22.png" class="img-fluid" width="200"></p>
-<p><img src="images2/n23.png" class="img-fluid" width="407"></p>
+<p>Make sure that the internal ID of the question in the “Question” block, <code>QID7</code> in this example, matches the text in the fourth line of the script you entered before (i.e., <code>"${q://QID7/SelectedChoicesRecode}"</code>). If not, edit the script by entering the correct internal ID.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img src="images2/n22.png" class="img-fluid" style="width:100.0%"></p>
+</div><div class="column" style="width:60%;">
+<p><img src="images2/n23.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
 </div>
 </div>
 <hr>
 </section>
-<section id="step-3.6---survey-flow-setup" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.6---survey-flow-setup">Step 3.6 - Survey Flow Setup</h3>
+<section id="step-3.7---survey-flow-setup" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.7---survey-flow-setup">Step 3.7 - Survey Flow Setup</h3>
 <p>Click the <strong>Survey Flow</strong> button on the left side bar.</p>
 <p><img src="images2/n24.png" class="img-fluid"></p>
-<p>All the question blocks we created before, should be visible in a sequential flow as shown below.</p>
+<p>All the question blocks we created before, should be visible in an ordered list as shown below.</p>
 <p><img src="images2/n25.png" class="img-fluid"></p>
-<p>In the <strong>Init</strong> block, click <strong>Add Below</strong> and select <strong>Group.</strong></p>
+<p>In the <strong>Init</strong> block, click <strong>Add Below</strong> and select <strong>Group</strong>.</p>
 <p><img src="images2/n26.png" class="img-fluid"></p>
 <p>Rename the new group as ‘Loop’ .</p>
-<p>Then next to the <strong>Question</strong> block click the <strong>Move</strong> button.</p>
+<p>Then in the <strong>Question</strong> block click the <strong>Move</strong> button.</p>
 <p><img src="images2/n27.png" class="img-fluid"></p>
-<p>Move the <strong>Question</strong> block under the <strong>Loop</strong> groupby dragging it <strong>.</strong></p>
+<p>Move the <strong>Question</strong> block under the <strong>Loop</strong> groupby dragging it.</p>
 <p><img src="images2/n28.png" class="img-fluid"></p>
 <p>The <strong>Question</strong> block is now part of the Loop group.</p>
 <p><img src="images2/n29.png" class="img-fluid"></p>
 <p>Similarly, move for the <strong>CAT</strong> block into the <strong>Loop</strong> group, under the <strong>Question</strong> block.</p>
 <p><img src="images2/n30.png" class="img-fluid"></p>
-<p>Then click ‘<strong>+ Add a New Element’</strong> under the <strong>CAT</strong> block, inside the <strong>Loop</strong> group and select’<strong>Branch’.</strong></p>
+<p>Then click <strong>+ Add a New Element</strong> here under the <strong>CAT</strong> block, inside the <strong>Loop</strong> group and select <strong>Branch</strong>.</p>
 <p><img src="images2/n31.png" class="img-fluid"></p>
-<p>Click ’<strong>Add a Condition’</strong></p>
+<p>Click <strong>Add a Condition</strong></p>
 <p><img src="images2/n32.png" class="img-fluid"></p>
-<p>Select ‘<strong>Embedded Data</strong>’.</p>
+<p>Select <strong>Embedded Data</strong>.</p>
 <p><img src="images2/n33.png" class="img-fluid"></p>
 <p>Then,</p>
 <ol type="1">
@@ -1057,8 +1050,8 @@ Important
 <p>Then click <strong>Apply</strong> to apply this flow set up to the survey.</p>
 <hr>
 </section>
-<section id="step-3.7---publish-the-testsurvey" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.7---publish-the-testsurvey">Step 3.7 - Publish the Test/Survey</h3>
+<section id="step-3.8---publish-the-testsurvey" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.8---publish-the-testsurvey">Step 3.8 - Publish the Test/Survey</h3>
 <ol type="1">
 <li><p>Go to ‘<strong>Survey Options</strong>’</p></li>
 <li><p>Select ’<strong>Responses’</strong></p></li>

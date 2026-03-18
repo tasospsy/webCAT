@@ -16,14 +16,14 @@ The item bank information file must be a Comma-Separated Values (.csv) file, wit
 -   The second column, labelled `Item`, must contain the item stems.
 
 -   The next columns must contain the response options, labeled `Choice1`, `Choice2`, and so on, up to the number of available choices.\
-    **Note:** In this version, all items must have the same number of response options.
+    **Note:** All items must have the same number of response options.
 
 -   The next column, labelled `Scores`, must contain the item scores. A possible format for a dichotomous item with 4 response options could be `0100` indicating that the second response option is scored as 1 (e.g., correct answer). For polytomous items the scores should range from `0` up to the total number of categories minus 1, e.g., `0123` for 4 response options.
 
 -   The next columns contain the items' discrimination (slope) parameters.\
     For $l$ dimensions, $l$ columns are required, labelled `a1`, `a2`, etc. For a unidimensional structure, there is only one parameter, and therefore one column labelled `a1.`
 
--   The next column, labelled `d`, contains the items' difficulty (location or intercept) parameters.
+-   The next column, labelled `d`, contains the items' difficulty parameters (also known as "location" or "intercept") .
 :::
 
 ```{=html}

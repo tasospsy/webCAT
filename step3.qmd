@@ -2,19 +2,15 @@
 #title: "Step 3: Qualtrics Configuration"
 ---
 
-Step 3 includes all the necessary steps to create the Qualtrics survey/test. We demonstrate the procedure using the PPSE item bank; however, you can follow the same steps using your own item bank. To use the TCAT item bank, specific instructions are provided where necessary.
+Step 3 includes all the necessary steps to create the Qualtrics survey/test. We demonstrate the procedure using the PPSE item bank; however, you can follow the same steps using your own item bank. To use the TCAT item bank, additional instructions are provided in the substeps below where necessary.
 
 ### Step 3.1 - Setup Block
 
-Enter the Qualtrics website and log in with your credentials.
+Go to the Qualtrics XM website via your institution and log in with your credentials.
 
 Go to **Home page** — **Create a new project** — **Survey** — and click **Get started.**
 
-Enter a Name for the Qualtrics project.
-
-::: callout-note
-The Qualtric project name is **not** the same as the Test name you specified on this tutorial.
-:::
+Enter a Name of your choice for the Qualtrics project.
 
 ![](images2/n1.png){fig-align="center" width="450"}
 
@@ -28,27 +24,27 @@ Change the question text to '**Test Name**'.
 
 ![](images2/n3.png){fig-align="center"}
 
-Then, click on the three dots menu on the right corner of the 'Test Name' question and select **Copy** to create new question of similar type.
+Then, click on the three dots at the top right corner of the 'Test Name' question and click **Copy** to create new question of similar type.
 
 ![](images2/n4.png){fig-align="center" width="400"}
 
-Change the question text to '**Access Token'** at the second question.
+Change the text of the second question into '**Access Token'**.
 
 ![](images2/n5.png){fig-align="center"}
 
-These two questions belong to a single block, which will be the first block in your test. This block is crucial, as it links the Qualtrics survey to the correct test specifications you set up in Steps 1 and 2.
+These two questions make up a single block, which will be the first block in your test. This block is crucial, as it links the Qualtrics survey to the test specifications you set up in Steps 1 and 2.
 
 Rename the first Block as '**Setup**' block, by changing the label above the first question.
 
 ![](images2/n6.png)
 
-Then, for the '**Test Name'** question, select **Add requirements** and **Force response** under the **Response Requirements** options on the left panel.
+Then, for the **'Test Name'** question, select **Add requirements** and **Force response** under the **Response Requirements** options on the left panel.
 
-Repeat for the '**Access Token'** question.
+Similarly, add **Force response** requirement for the **'Access Token'** question.
 
 ![](images2/n7.png)
 
-Then, for the '**Test Name'** question select '**Default choices**' from the options on the left panel. Enter the name of your test in the first question as the default choice, and click '**Save**'.
+Then, for the **'Test Name'** question select **Default choices** from the options on the left panel. Enter the name of your test in the first question as the default choice, and click **Save**.
 
 Then repeat the process for the second question, entering the access token that you generated previously.
 
@@ -60,7 +56,7 @@ Here we follow the PPSE by entering `PPSE` as the test name and `Tok1234` as the
 
 ![](images2/n9.png)
 
-Then select the '**Access Token**' question and click the JavaScript option on the left side panel.
+Then select the **'Access Token'** question and click the JavaScript option on the left side panel.
 
 ![](images2/n10.png)
 
@@ -68,7 +64,7 @@ Replace the default lines of code in the pop-up window with the script below and
 
 ``` javascript
 Qualtrics.SurveyEngine.addOnload(function() {
-	 this.hideNextButton();
+     this.hideNextButton();
     var that = this;
     (function(){that.clickNextButton();}).delay(1);
 });
@@ -80,29 +76,29 @@ Qualtrics.SurveyEngine.addOnload(function() {
 
 ### Step 3.2 Introduction Block (*optional*)
 
-This block consists of a text question. It is optional and can be used to display introductory text for your study, such as guidelines, ethical approvals, participation consent, and contact information.
+This block consists of a text question. It is optional and can be used to display introductory text for your study, such as guidelines, ethical approvals, participants' informed consent, and contact information.
 
 1.  Add a new block by selecting **Add Block**
 
 2.  Rename the new block as 'Intro'
 
-3.  Add new question to the block by selecting '**Add new question'**
+3.  Add a new question to the block by selecting **Add new question**,
 
-4.  and then '**Text / Graphic**' type
+4.  and then **Text / Graphic** type
 
 ![](images2/n12.png)
 
-This does not serve as an actual question; rather, it displays all the necessary information for the test user.
+This does not serve as an actual question; rather, it displays all the necessary information for the test participant.
 
-In this example we add some plain text:
+In this example we add some plain text for illustrative purpose:
 
 ![](images/Screenshot%202025-12-19%20at%2008.18.16.png)
 
 ------------------------------------------------------------------------
 
-### Step 3.2 Extra Block (*optional*)
+### Step 3.3 Extra Block (*optional*)
 
-Similarly to the Intro block, you can add an additional block, here labelled as **‘Extra’**, with questions you would like to appear before the actual CAT. These may include demographic or other personal questions. In this example, the 'Extra' block consists of two *dummy* questions: One is for gender and the other is for age.
+Similarly to the 'Intro' block, you can add an additional block, here labelled as **‘Extra’**, with questions you would like to appear before the actual CAT. These may include demographic or other personal questions. In this example, the 'Extra' block consists of two questions for illustrative purposes: One asking for the participant's gender and the other asking for the participant's age.
 
 ::: callout-note
 No CAT methods are configured for the ‘Extra Block'. All users will be asked the same questions.
@@ -112,7 +108,7 @@ No CAT methods are configured for the ‘Extra Block'. All users will be asked t
 
 ------------------------------------------------------------------------
 
-### Step 3.3 CAT Initialization Block
+### Step 3.4 CAT Initialization Block
 
 Similarly,
 
@@ -123,18 +119,18 @@ Similarly,
 
 ![](images2/n14.png){fig-align="center"}
 
-For the 'Loading...' question, select the '**Javascript'** option from the left panel.
+For the 'Loading...' question, select the **Javascript** option from the left panel.
 
 ![]()
 
 ![](images2/n15.png)
 
-Replace the default lines of code in the pop-up window with the script below and click '**Save**':
+Replace the default lines of code in the pop-up window with the script below and click **Save**:
 
 ``` javascript
 Qualtrics.SurveyEngine.addOnload(function() {
     let answers = {
-	  // empty for now
+      // empty for now
   };
   
   //console.log(answers);
@@ -173,7 +169,7 @@ Qualtrics.SurveyEngine.addOnload(function() {
 
 ------------------------------------------------------------------------
 
-### Step 3.4 Question Block
+### Step 3.5 Question Block
 
 Add a new block, labelled as '**Question**'.
 
@@ -193,7 +189,7 @@ Then, add a **Multiple choice** question type.
 
 ![](images2/n18.png)
 
-Next, click the '**Javascript**' button on the left side panel, and replace code, paste the following script and click '**Save**':
+Next, click the **Javascript** button on the left side panel, replace the code pasting the following script into the field and click **Save**:
 
 ``` javascript
 Qualtrics.SurveyEngine.addOnReady(function() {
@@ -215,7 +211,7 @@ Qualtrics.SurveyEngine.addOnReady(function() {
 ------------------------------------------------------------------------
 
 ::: callout-tip
-For TCAT, and for maximum-performance test in general you should consider display the answer choices in a random order. When you make the item bank information file in Step 2, it is convenient to paste all the correct answers into column `Choice1` and make the `Scores` column the same for all the items (e.g. `1000` for dichotomous items).
+For TCAT, and for maximum-performance test in general you should consider to display the answer choices in a random order. When you make the item bank information file in Step 2, it is convenient to paste all the correct answers into column `Choice1` and make the `Scores` column the same for all the items (e.g. `1000` for dichotomous items).
 :::
 
 ::: callout-warning
@@ -232,7 +228,7 @@ For typical-performance test, like the PPSE example we demonstrate here, DO NOT 
 
 ------------------------------------------------------------------------
 
-### Step 3.5 - Main CAT Block
+### Step 3.6 - Main CAT Block
 
 1.  Add a new question block
 2.  Name it 'CAT'
@@ -292,42 +288,46 @@ Qualtrics.SurveyEngine.addOnload(function()
 ```
 
 ::: callout-warning
-## Important
-
-Click the drop down **Tools** Tab and select "**Show internal IDs**'
+Click the drop down **Tools** Tab and select **Show internal IDs**.
 
 ![](images2/n21.png){width="500"}
 
-Make sure that the internal ID, `QID8` in this example, matches the id in the fourth line of the script you entered before. If not, edit the script by entering the correct internal ID.
+Make sure that the internal ID of the question in the "Question" block, `QID7` in this example, matches the text in the fourth line of the script you entered before (i.e., `"${q://QID7/SelectedChoicesRecode}"`). If not, edit the script by entering the correct internal ID.
 
-![](images2/n22.png){width="200"}
+::: {.columns}
+::: {.column width="40%"}
+![](images2/n22.png){width="100%"}
+:::
 
-![](images2/n23.png){width="407"}
+::: {.column width="60%"}
+![](images2/n23.png){width="100%"}
+:::
+:::
 :::
 
 ------------------------------------------------------------------------
 
-### Step 3.6 - Survey Flow Setup
+### Step 3.7 - Survey Flow Setup
 
 Click the **Survey Flow** button on the left side bar.
 
 ![](images2/n24.png)
 
-All the question blocks we created before, should be visible in a sequential flow as shown below.
+All the question blocks we created before, should be visible in an ordered list as shown below.
 
 ![](images2/n25.png)
 
-In the **Init** block, click **Add Below** and select **Group.**
+In the **Init** block, click **Add Below** and select **Group**.
 
 ![](images2/n26.png)
 
 Rename the new group as 'Loop' .
 
-Then next to the **Question** block click the **Move** button.
+Then in the **Question** block click the **Move** button.
 
 ![](images2/n27.png)
 
-Move the **Question** block under the **Loop** groupby dragging it **.**
+Move the **Question** block under the **Loop** groupby dragging it.
 
 ![](images2/n28.png)
 
@@ -339,15 +339,15 @@ Similarly, move for the **CAT** block into the **Loop** group, under the **Quest
 
 ![](images2/n30.png)
 
-Then click '**+ Add a New Element'** under the **CAT** block, inside the **Loop** group and select '**Branch'.**
+Then click **+ Add a New Element** here under the **CAT** block, inside the **Loop** group and select **Branch**.
 
 ![](images2/n31.png)
 
-Click '**Add a Condition'**
+Click **Add a Condition**
 
 ![](images2/n32.png)
 
-Select '**Embedded Data**'.
+Select **Embedded Data**.
 
 ![](images2/n33.png)
 
@@ -385,7 +385,7 @@ Then click **Apply** to apply this flow set up to the survey.
 
 ------------------------------------------------------------------------
 
-### Step 3.7 - Publish the Test/Survey
+### Step 3.8 - Publish the Test/Survey
 
 1.  Go to '**Survey Options**'
 

@@ -172,12 +172,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#step-3.1---setup-block" id="toc-step-3.1---setup-block" class="nav-link active" data-scroll-target="#step-3.1---setup-block">Step 3.1 - Setup Block</a></li>
   <li><a href="#step-3.2-introduction-block-optional" id="toc-step-3.2-introduction-block-optional" class="nav-link" data-scroll-target="#step-3.2-introduction-block-optional">Step 3.2 Introduction Block (<em>optional</em>)</a></li>
-  <li><a href="#step-3.2-extra-block-optional" id="toc-step-3.2-extra-block-optional" class="nav-link" data-scroll-target="#step-3.2-extra-block-optional">Step 3.2 Extra Block (<em>optional</em>)</a></li>
-  <li><a href="#step-3.3-cat-initialization-block" id="toc-step-3.3-cat-initialization-block" class="nav-link" data-scroll-target="#step-3.3-cat-initialization-block">Step 3.3 CAT Initialization Block</a></li>
-  <li><a href="#step-3.4-question-block" id="toc-step-3.4-question-block" class="nav-link" data-scroll-target="#step-3.4-question-block">Step 3.4 Question Block</a></li>
-  <li><a href="#step-3.5---main-cat-block" id="toc-step-3.5---main-cat-block" class="nav-link" data-scroll-target="#step-3.5---main-cat-block">Step 3.5 - Main CAT Block</a></li>
-  <li><a href="#step-3.6---survey-flow-setup" id="toc-step-3.6---survey-flow-setup" class="nav-link" data-scroll-target="#step-3.6---survey-flow-setup">Step 3.6 - Survey Flow Setup</a></li>
-  <li><a href="#step-3.7---publish-the-testsurvey" id="toc-step-3.7---publish-the-testsurvey" class="nav-link" data-scroll-target="#step-3.7---publish-the-testsurvey">Step 3.7 - Publish the Test/Survey</a></li>
+  <li><a href="#step-3.3-extra-block-optional" id="toc-step-3.3-extra-block-optional" class="nav-link" data-scroll-target="#step-3.3-extra-block-optional">Step 3.3 Extra Block (<em>optional</em>)</a></li>
+  <li><a href="#step-3.4-cat-initialization-block" id="toc-step-3.4-cat-initialization-block" class="nav-link" data-scroll-target="#step-3.4-cat-initialization-block">Step 3.4 CAT Initialization Block</a></li>
+  <li><a href="#step-3.5-question-block" id="toc-step-3.5-question-block" class="nav-link" data-scroll-target="#step-3.5-question-block">Step 3.5 Question Block</a></li>
+  <li><a href="#step-3.6---main-cat-block" id="toc-step-3.6---main-cat-block" class="nav-link" data-scroll-target="#step-3.6---main-cat-block">Step 3.6 - Main CAT Block</a></li>
+  <li><a href="#step-3.7---survey-flow-setup" id="toc-step-3.7---survey-flow-setup" class="nav-link" data-scroll-target="#step-3.7---survey-flow-setup">Step 3.7 - Survey Flow Setup</a></li>
+  <li><a href="#step-3.8---publish-the-testsurvey" id="toc-step-3.8---publish-the-testsurvey" class="nav-link" data-scroll-target="#step-3.8---publish-the-testsurvey">Step 3.8 - Publish the Test/Survey</a></li>
   </ul>
 </nav>
     </div>
@@ -187,38 +187,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>In this step, we show you how to set up a basic Qualtrics test/survey and connect it to the test specifications from steps 1 and 2 of this tutorial. We use the Dutch-English vocabulary test of 36 dichotomous items as an example (<a href="https://osf.io/ymh3d/files/sk9hx" class="uri">https://osf.io/ymh3d/files/sk9hx</a>), with the following specifications:</p>
-<table class="table">
-<tbody>
-<tr class="odd">
-<td>Test name</td>
-<td><code>TCAT</code></td>
-</tr>
-<tr class="even">
-<td>Token</td>
-<td><code>test</code></td>
-</tr>
-</tbody>
-</table>
-<p>It is a variable length CAT calibrated under a 2PL model. The stopping criterion is set to <code>0.33</code>meaning that the test will stop when the standard error of the latent trait estimate reaches 0.33 or lower.</p>
+<p>Step 3 includes all the necessary steps to create the Qualtrics survey/test. We demonstrate the procedure using the PPSE item bank; however, you can follow the same steps using your own item bank. To use the TCAT item bank, additional instructions are provided in the substeps below where necessary.</p>
 <section id="step-3.1---setup-block" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.1---setup-block">Step 3.1 - Setup Block</h3>
-<p>Enter the Qualtrics website and log in with your credentials.</p>
+<p>Go to the Qualtrics XM website via your institution and log in with your credentials.</p>
 <p>Go to <strong>Home page</strong> — <strong>Create a new project</strong> — <strong>Survey</strong> — and click <strong>Get started.</strong></p>
-<p>Enter a Name for the Qualtrics project.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The Qualtric project name is <strong>not</strong> the same as the Test name you specified on this tutorial.</p>
-</div>
-</div>
+<p>Enter a Name of your choice for the Qualtrics project.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images2/n1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></p>
@@ -237,26 +211,25 @@ Note
 <p><img src="images2/n3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>Then, click on the three dots menu on the right corner of the ‘Test Name’ question and select <strong>Copy</strong> to create new question of similar type.</p>
+<p>Then, click on the three dots at the top right corner of the ‘Test Name’ question and click <strong>Copy</strong> to create new question of similar type.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images2/n4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
 </figure>
 </div>
-<p>Change the question text to ’<strong>Access Token’</strong> at the second question.</p>
+<p>Change the text of the second question into ’<strong>Access Token’</strong>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images2/n5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>These two questions belong to a single block, which will be the first block in your test. This block is crucial, as it links the Qualtrics survey to the correct test specifications you set up in Steps 1 and 2.</p>
+<p>These two questions make up a single block, which will be the first block in your test. This block is crucial, as it links the Qualtrics survey to the test specifications you set up in Steps 1 and 2.</p>
 <p>Rename the first Block as ‘<strong>Setup</strong>’ block, by changing the label above the first question.</p>
 <p><img src="images2/n6.png" class="img-fluid"></p>
-<p>Then, for the ’<strong>Test Name’</strong> question, select <strong>Add requirements</strong> and <strong>Force response</strong> under the <strong>Response Requirements</strong> options on the left panel.</p>
-<p>Repeat for the ’<strong>Access Token’</strong> question.</p>
+<p>Then, for the <strong>‘Test Name’</strong> question, select <strong>Add requirements</strong> and <strong>Force response</strong> under the <strong>Response Requirements</strong> options on the left panel.</p>
+<p>Similarly, add <strong>Force response</strong> requirement for the <strong>‘Access Token’</strong> question.</p>
 <p><img src="images2/n7.png" class="img-fluid"></p>
-<hr>
-<p>Then, for the ‘<strong>Test Name’</strong> question select’<strong>Default choices</strong>’ from the options on the left panel. Enter the name of your test in the first question as the default choice, and click ‘<strong>Save</strong>’.</p>
+<p>Then, for the <strong>‘Test Name’</strong> question select <strong>Default choices</strong> from the options on the left panel. Enter the name of your test in the first question as the default choice, and click <strong>Save</strong>.</p>
 <p>Then repeat the process for the second question, entering the access token that you generated previously.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -273,7 +246,7 @@ Note
 </div>
 <p><img src="images2/n8.png" class="img-fluid"></p>
 <p><img src="images2/n9.png" class="img-fluid"></p>
-<p>Then select the ‘<strong>Access Token</strong>’ question and click the JavaScript option on the left side panel.</p>
+<p>Then select the <strong>‘Access Token’</strong> question and click the JavaScript option on the left side panel.</p>
 <p><img src="images2/n10.png" class="img-fluid"></p>
 <p>Replace the default lines of code in the pop-up window with the script below and click <strong>Save.</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnload</span>(<span class="kw">function</span>() {</span>
@@ -286,21 +259,22 @@ Note
 </section>
 <section id="step-3.2-introduction-block-optional" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.2-introduction-block-optional">Step 3.2 Introduction Block (<em>optional</em>)</h3>
-<p>This block consists of a text question. It is optional and can be used to display introductory text for your study, such as guidelines, ethical approvals, participation consent, and contact information.</p>
+<p>This block consists of a text question. It is optional and can be used to display introductory text for your study, such as guidelines, ethical approvals, participants’ informed consent, and contact information.</p>
 <ol type="1">
 <li><p>Add a new block by selecting <strong>Add Block</strong></p></li>
 <li><p>Rename the new block as ‘Intro’</p></li>
-<li><p>Add new question to the block by selecting ’<strong>Add new question’</strong></p></li>
-<li><p>and then ‘<strong>Text / Graphic</strong>’ type</p></li>
+<li><p>Add a new question to the block by selecting <strong>Add new question</strong>,</p></li>
+<li><p>and then <strong>Text / Graphic</strong> type</p></li>
 </ol>
 <p><img src="images2/n12.png" class="img-fluid"></p>
-<p>This does not serve as an actual question; rather, it displays all the necessary information for the test user.</p>
-<p>In this example we add some plain text:</p>
+<p>This does not serve as an actual question; rather, it displays all the necessary information for the test participant.</p>
+<p>In this example we add some plain text for illustrative purpose:</p>
 <p><img src="images/Screenshot 2025-12-19 at 08.18.16.png" class="img-fluid"></p>
+<hr>
 </section>
-<section id="step-3.2-extra-block-optional" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.2-extra-block-optional">Step 3.2 Extra Block (<em>optional</em>)</h3>
-<p>Similarly to the Intro block, you can add an additional block, here labelled as <strong>‘Extra’</strong>, with questions you would like to appear before the actual CAT. These may include demographic or other personal questions. In this example, the ‘Extra’ block consists of two <em>dummy</em> questions: One is for gender and the other is for age.</p>
+<section id="step-3.3-extra-block-optional" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.3-extra-block-optional">Step 3.3 Extra Block (<em>optional</em>)</h3>
+<p>Similarly to the ‘Intro’ block, you can add an additional block, here labelled as <strong>‘Extra’</strong>, with questions you would like to appear before the actual CAT. These may include demographic or other personal questions. In this example, the ‘Extra’ block consists of two questions for illustrative purposes: One asking for the participant’s gender and the other asking for the participant’s age.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -315,9 +289,10 @@ Note
 </div>
 </div>
 <p><img src="images2/n13.png" class="img-fluid"></p>
+<hr>
 </section>
-<section id="step-3.3-cat-initialization-block" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.3-cat-initialization-block">Step 3.3 CAT Initialization Block</h3>
+<section id="step-3.4-cat-initialization-block" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.4-cat-initialization-block">Step 3.4 CAT Initialization Block</h3>
 <p>Similarly,</p>
 <ol type="1">
 <li>Add a new block,</li>
@@ -330,45 +305,50 @@ Note
 <p><img src="images2/n14.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>For the ‘Loading…’ question, select the ’<strong>Javascript’</strong> option from the left panel.</p>
+<p>For the ‘Loading…’ question, select the <strong>Javascript</strong> option from the left panel.</p>
 <p><img src=".png" class="img-fluid"></p>
 <p><img src="images2/n15.png" class="img-fluid"></p>
-<p>Replace the default lines of code in the pop-up window with the script below and click ‘<strong>Save</strong>’:</p>
+<p>Replace the default lines of code in the pop-up window with the script below and click <strong>Save</strong>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnload</span>(<span class="kw">function</span>() {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// CALL</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(<span class="st">"https://qualcat.duckdns.org/api/v0/init"</span><span class="op">,</span> {</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">method</span><span class="op">:</span> <span class="st">"POST"</span><span class="op">,</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">headers</span><span class="op">:</span> {</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Content-Type"</span><span class="op">:</span> <span class="st">"application/json"</span><span class="op">,</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x-api-key"</span><span class="op">:</span> <span class="st">"${q://QID2/ChoiceTextEntryValue}"</span><span class="op">,</span> <span class="co">// passwrd</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"userid"</span><span class="op">:</span> <span class="st">"${e://Field/SessionID}"</span><span class="op">,</span> <span class="co">// username</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"catName"</span><span class="op">:</span> <span class="st">"${q://QID1/ChoiceTextEntryValue}"</span> <span class="co">// CAT name</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(answers)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">json</span>())</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> {</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"API returned:"</span><span class="op">,</span> data)<span class="op">;</span> <span class="co">// Debug</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Store the API result in Embedded Data</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"stop_crit"</span><span class="op">,</span> data<span class="op">.</span><span class="at">stop_crit</span>)<span class="op">;</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"next_q"</span><span class="op">,</span> data<span class="op">.</span><span class="at">next_q</span>)<span class="op">;</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"item_num"</span><span class="op">,</span> data<span class="op">.</span><span class="at">item_num</span>)<span class="op">;</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> arr <span class="op">=</span> data<span class="op">.</span><span class="at">choices</span><span class="op">;</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arr<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> varName <span class="op">=</span> <span class="st">"choice"</span> <span class="op">+</span> (i <span class="op">+</span> <span class="dv">1</span>)<span class="op">;</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(varName<span class="op">,</span> arr[i])<span class="op">;</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"API error:"</span><span class="op">,</span> err))<span class="op">;</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">hideNextButton</span>()<span class="op">;</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> that <span class="op">=</span> <span class="kw">this</span><span class="op">;</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">function</span>(){that<span class="op">.</span><span class="fu">clickNextButton</span>()<span class="op">;</span>})<span class="op">.</span><span class="fu">delay</span>(<span class="dv">4</span>)<span class="op">;</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> answers <span class="op">=</span> {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      <span class="co">// empty for now</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">//console.log(answers);</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">// CALL</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(<span class="st">"https://qualcat.duckdns.org/api/v0/init"</span><span class="op">,</span> {</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">method</span><span class="op">:</span> <span class="st">"POST"</span><span class="op">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">headers</span><span class="op">:</span> {</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Content-Type"</span><span class="op">:</span> <span class="st">"application/json"</span><span class="op">,</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"x-api-key"</span><span class="op">:</span> <span class="st">"${q://QID2/ChoiceTextEntryValue}"</span><span class="op">,</span> <span class="co">// passwrd</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"userid"</span><span class="op">:</span> <span class="st">"${e://Field/SessionID}"</span><span class="op">,</span> <span class="co">// username</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"catName"</span><span class="op">:</span> <span class="st">"${q://QID1/ChoiceTextEntryValue}"</span> <span class="co">// CAT name</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(answers)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">json</span>())</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> {</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"API returned:"</span><span class="op">,</span> data)<span class="op">;</span> <span class="co">// Debug</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Store the API result in Embedded Data</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"stop_crit"</span><span class="op">,</span> data<span class="op">.</span><span class="at">stop_crit</span>)<span class="op">;</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"next_q"</span><span class="op">,</span> data<span class="op">.</span><span class="at">next_q</span>)<span class="op">;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(<span class="st">"item_num"</span><span class="op">,</span> data<span class="op">.</span><span class="at">item_num</span>)<span class="op">;</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> arr <span class="op">=</span> data<span class="op">.</span><span class="at">choices</span><span class="op">;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> arr<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="kw">var</span> varName <span class="op">=</span> <span class="st">"choice"</span> <span class="op">+</span> (i <span class="op">+</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">setEmbeddedData</span>(varName<span class="op">,</span> arr[i])<span class="op">;</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">"API error:"</span><span class="op">,</span> err))<span class="op">;</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">hideNextButton</span>()<span class="op">;</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> that <span class="op">=</span> <span class="kw">this</span><span class="op">;</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">function</span>(){that<span class="op">.</span><span class="fu">clickNextButton</span>()<span class="op">;</span>})<span class="op">.</span><span class="fu">delay</span>(<span class="dv">4</span>)<span class="op">;</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="images2/n16.png" class="img-fluid"></p>
 <hr>
 </section>
-<section id="step-3.4-question-block" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.4-question-block">Step 3.4 Question Block</h3>
+<section id="step-3.5-question-block" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.5-question-block">Step 3.5 Question Block</h3>
 <p>Add a new block, labelled as ‘<strong>Question</strong>’.</p>
 <p>Then, add a <strong>Multiple choice</strong> question type.</p>
 <p><img src="images2/n17.png" class="img-fluid"></p>
@@ -391,7 +371,7 @@ Note
 <li><p>Replace the ‘Click to write Choice 1’ with <code>${e://Field/choice1},</code>‘Click to write Choice 2’ with <code>${e://Field/choice2}</code> , ‘Click to write Choice 3’ with <code>${e://Field/choice3}</code> and so on for all available choices.</p></li>
 </ul>
 <p><img src="images2/n18.png" class="img-fluid"></p>
-<p>Next, click the ‘<strong>Javascript</strong>’ button on the left side panel, and replace code, paste the following script and click ‘<strong>Save</strong>’:</p>
+<p>Next, click the <strong>Javascript</strong> button on the left side panel, replace the code pasting the following script into the field and click <strong>Save</strong>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnReady</span>(<span class="kw">function</span>() {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 1. clear Qualtrics internal answer</span></span>
@@ -417,7 +397,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For TCAT, and for maximum-performance test in general you should consider display the answer choices in a random order. When you make the item bank information file in Step 2, it is convenient to paste all the correct answers into column <code>Choice1</code> and make the <code>Scores</code> column the same for all the items (e.g.&nbsp;<code>1000</code> for dichotomous items). Then, when you come to this step, you can follow the simple steps below to display the answer choices in random order.</p>
+<p>For TCAT, and for maximum-performance test in general you should consider to display the answer choices in a random order. When you make the item bank information file in Step 2, it is convenient to paste all the correct answers into column <code>Choice1</code> and make the <code>Scores</code> column the same for all the items (e.g.&nbsp;<code>1000</code> for dichotomous items).</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -439,9 +419,10 @@ Warning
 <li><p>Then choose ‘<strong>Display answers in a random order</strong>’ and click ‘<strong>Save</strong>’.</p></li>
 </ul>
 <p><img src="images2/n19.png" class="img-fluid" width="600"></p>
+<hr>
 </section>
-<section id="step-3.5---main-cat-block" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.5---main-cat-block">Step 3.5 - Main CAT Block</h3>
+<section id="step-3.6---main-cat-block" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.6---main-cat-block">Step 3.6 - Main CAT Block</h3>
 <ol type="1">
 <li>Add a new question block</li>
 <li>Name it ‘CAT’</li>
@@ -454,7 +435,7 @@ Warning
 <div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Qualtrics<span class="op">.</span><span class="at">SurveyEngine</span><span class="op">.</span><span class="fu">addOnload</span>(<span class="kw">function</span>()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>     <span class="kw">let</span> answers <span class="op">=</span> {</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">q_resp</span><span class="op">:</span> <span class="st">"${q://QID8/SelectedChoicesRecode}"</span><span class="op">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">q_resp</span><span class="op">:</span> <span class="st">"${q://QID7/SelectedChoicesRecode}"</span><span class="op">,</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">item_num</span><span class="op">:</span> <span class="st">"${e://Field/item_num}"</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -502,24 +483,83 @@ Warning
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Click the drop down <strong>Tools</strong> Tab and select “<strong>Show internal IDs</strong>’</p>
+<p>Click the drop down <strong>Tools</strong> Tab and select <strong>Show internal IDs</strong>.</p>
 <p><img src="images2/n21.png" class="img-fluid" width="500"></p>
-<p>Make sure that the internal ID, <code>QID8</code> in this example, matches the id in the fourth line of the script you entered before. If not, edit the script by entering the correct internal ID.</p>
-<p><img src="images2/n22.png" class="img-fluid" width="250"></p>
-<p><img src="images2/n23.png" class="img-fluid" width="575"></p>
+<p>Make sure that the internal ID of the question in the “Question” block, <code>QID7</code> in this example, matches the text in the fourth line of the script you entered before (i.e., <code>"${q://QID7/SelectedChoicesRecode}"</code>). If not, edit the script by entering the correct internal ID.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img src="images2/n22.png" class="img-fluid" style="width:100.0%"></p>
+</div><div class="column" style="width:60%;">
+<p><img src="images2/n23.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
 </div>
 </div>
 <hr>
 </section>
-<section id="step-3.6---survey-flow-setup" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.6---survey-flow-setup">Step 3.6 - Survey Flow Setup</h3>
+<section id="step-3.7---survey-flow-setup" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.7---survey-flow-setup">Step 3.7 - Survey Flow Setup</h3>
 <p>Click the <strong>Survey Flow</strong> button on the left side bar.</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.18.49.png" class="img-fluid"></p>
-<p>All the question blocks we created before, should be visible in a sequential flow as shown below.</p>
+<p><img src="images2/n24.png" class="img-fluid"></p>
+<p>All the question blocks we created before, should be visible in an ordered list as shown below.</p>
+<p><img src="images2/n25.png" class="img-fluid"></p>
+<p>In the <strong>Init</strong> block, click <strong>Add Below</strong> and select <strong>Group</strong>.</p>
+<p><img src="images2/n26.png" class="img-fluid"></p>
+<p>Rename the new group as ‘Loop’ .</p>
+<p>Then in the <strong>Question</strong> block click the <strong>Move</strong> button.</p>
+<p><img src="images2/n27.png" class="img-fluid"></p>
+<p>Move the <strong>Question</strong> block under the <strong>Loop</strong> groupby dragging it.</p>
+<p><img src="images2/n28.png" class="img-fluid"></p>
+<p>The <strong>Question</strong> block is now part of the Loop group.</p>
+<p><img src="images2/n29.png" class="img-fluid"></p>
+<p>Similarly, move for the <strong>CAT</strong> block into the <strong>Loop</strong> group, under the <strong>Question</strong> block.</p>
+<p><img src="images2/n30.png" class="img-fluid"></p>
+<p>Then click <strong>+ Add a New Element</strong> here under the <strong>CAT</strong> block, inside the <strong>Loop</strong> group and select <strong>Branch</strong>.</p>
+<p><img src="images2/n31.png" class="img-fluid"></p>
+<p>Click <strong>Add a Condition</strong></p>
+<p><img src="images2/n32.png" class="img-fluid"></p>
+<p>Select <strong>Embedded Data</strong>.</p>
+<p><img src="images2/n33.png" class="img-fluid"></p>
+<p>Then,</p>
+<ol type="1">
+<li><p>Enter the word ‘stop’ for the embedded data</p></li>
+<li><p>Select ‘Is Equal To’ and enter the number ‘1’</p></li>
+<li><p>Click OK</p></li>
+<li><p>Add a New Element under the <em>if</em> branch</p></li>
+</ol>
+<p><img src="images2/n34.png" class="img-fluid"></p>
+<p>Select the <strong>End of Survey</strong> element</p>
+<p><img src="images2/n35.png" class="img-fluid"></p>
+<p>The survey flow should now look like this</p>
+<p><img src="images2/n36.png" class="img-fluid"></p>
+<hr>
+<p>Now, click the button <strong>Duplicate</strong> next to the loop group, <strong>as many times as the available total number of items.</strong> For this example, the PPSE item bank has a total of 19 items, therefore click the <strong>Duplicate</strong> button 19 times.</p>
+<p><img src="images2/n37.png" class="img-fluid"></p>
+<p>Scrolling down the Loop group should be duplicated 19 times.</p>
+<p><img src="images2/flow.gif" class="img-fluid"></p>
+<p>Then click <strong>Apply</strong> to apply this flow set up to the survey.</p>
+<hr>
+</section>
+<section id="step-3.8---publish-the-testsurvey" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.8---publish-the-testsurvey">Step 3.8 - Publish the Test/Survey</h3>
+<ol type="1">
+<li><p>Go to ‘<strong>Survey Options</strong>’</p></li>
+<li><p>Select ’<strong>Responses’</strong></p></li>
+<li><p>Uncheck the options <strong>Back Button</strong> and <strong>Allow respondents to finish later</strong></p></li>
+</ol>
+<p><img src="images/Screenshot 2025-12-02 at 08.39.24.png" class="img-fluid"></p>
+<ol type="1">
+<li>Then go to ‘<strong>Builder</strong>’ options again, and</li>
+<li>click ‘<strong>Publish</strong>’</li>
+</ol>
+<p><img src="images2/n38.png" class="img-fluid"></p>
+<p>After following short instructions, the survey will be published and a unique anonymous URL will be activated.</p>
+<p><img src="images2/n39.png" class="img-fluid"></p>
+<p>Now, the link <a href="https://uva.fra1.qualtrics.com/jfe/form/SV_1AimrTMN02GK1cW" class="uri">https://uva.fra1.qualtrics.com/jfe/form/SV_1AimrTMN02GK1cW</a> corresponds to a Qualtrics survey of the PROMIS Pediatric Psychological Stress Experiences (PPSE) item bank using computerized adaptive testing (CAT).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -530,60 +570,9 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In this example no ‘Extra Block’ is displayed. If you used an extra questions block, it would be visible under the ‘Intro’ block.</p>
+<p>For the TCAT published version go to <a href="https://uva.fra1.qualtrics.com/jfe/form/SV_bKF45qMy1dq7Ioe" class="uri">https://uva.fra1.qualtrics.com/jfe/form/SV_bKF45qMy1dq7Ioe</a></p>
 </div>
 </div>
-<p><img src="images/Screenshot 2025-12-02 at 08.19.43.png" class="img-fluid"></p>
-<p>In the init block, click <strong>Add Below</strong> and select <strong>Group.</strong></p>
-<p><img src="images/Screenshot 2025-12-02 at 08.20.10.png" class="img-fluid"></p>
-<p>Rename the new group as ‘loop’ .</p>
-<p>Then click <strong>Move</strong> next to the <strong>Question Block</strong> and move it by dragging it under the <strong>Group.</strong> As such we make the Question block part of the group.</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.20.53.png" class="img-fluid"></p>
-<p>Repeat for the <strong>cat block</strong> to make it part of the loop group.</p>
-<p>then click <strong>+ Add a New Element</strong> under the cat block, inside the group.</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.21.06.png" class="img-fluid"></p>
-<p>Select <strong>Branch</strong></p>
-<p><img src="images/Screenshot 2025-12-02 at 08.21.14.png" class="img-fluid"></p>
-<p>Click <strong>Add a Condition</strong></p>
-<p><img src="images/Screenshot 2025-12-02 at 08.21.24.png" class="img-fluid"></p>
-<p>Select ‘Embedded Data’.</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.21.46.png" class="img-fluid"></p>
-<ol type="1">
-<li><p>Enter the word ‘stop’ for the embedded data</p></li>
-<li><p>Select ‘Is Equal To’ and enter the number ‘1’</p></li>
-<li><p>Click OK</p></li>
-<li><p>Add a New Element <u>below</u> the if branch</p></li>
-</ol>
-<p><img src="images/Screenshot 2025-12-02 at 08.21.56.png" class="img-fluid"></p>
-<p>Select the <strong>End of Survey</strong> element</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.22.05.png" class="img-fluid"></p>
-<p>Then, click the button <strong>Duplicate</strong> next to the loop group, as many times as the available total number of items.</p>
-<p>In this example, the itembank consists of 36 items in total, therefore we click the button <strong>Duplicate</strong> 36 times.</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.22.49.png" class="img-fluid"></p>
-<ol type="1">
-<li><p>If we zoom out we should see the loop group duplicated by 36 times.</p></li>
-<li><p>Then click <strong>Apply</strong> to apply this flow set up to the survey.</p></li>
-</ol>
-<p><img src="images/Screenshot 2025-12-02 at 08.23.32.png" class="img-fluid"></p>
-</section>
-<section id="step-3.7---publish-the-testsurvey" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.7---publish-the-testsurvey">Step 3.7 - Publish the Test/Survey</h3>
-<ol type="1">
-<li><p>Go to ‘<strong>Survey Options</strong>’</p></li>
-<li><p>Select ’<strong>Responses’</strong></p></li>
-<li><p>and make sure to uncheck the radio buttons for the Back Button and Allow respondents to finish later</p></li>
-</ol>
-<p><img src="images/Screenshot 2025-12-02 at 08.39.24.png" class="img-fluid"></p>
-<ol type="1">
-<li>Then go to ‘<strong>Builder</strong>’ options again, and</li>
-<li>click ‘<strong>Publish</strong>’</li>
-</ol>
-<p><img src="images/Screenshot 2025-12-02 at 08.24.03.png" class="img-fluid"></p>
-<p>After following short instructions, the survey will be published and a unique anonymous URL will be activated.</p>
-<p><img src="images/Screenshot 2025-12-02 at 08.24.24.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>If you have not set up your own test, visit: <a href="https://uva.fra1.qualtrics.com/jfe/form/SV_bKF45qMy1dq7Ioe" class="uri">https://uva.fra1.qualtrics.com/jfe/form/SV_bKF45qMy1dq7Ioe</a> to take the English-Dutch vocabulary test on Qualtrics.</p>
-</blockquote>
 
 
 </section>

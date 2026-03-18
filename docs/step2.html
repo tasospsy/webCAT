@@ -171,7 +171,7 @@ window.Quarto = {
 
 <p>In Step 2, first select the IRT model that was used to obtain the item parameters in the item bank information file.</p>
 <p>Second, select the type of CAT that is required: If a fixed-length CAT is selected, the number of items (e.g., the test length) must also be specified. If a variable-length CAT is selected, the required level of measurement precision should be specified (default is <span class="math inline">\(SE(\hat\theta) = 0.3\)</span>).</p>
-<p>Third the item parameterizations must be specified (i.e., which parameters define the item response function; subject to change among different softwares).</p>
+<p>Third, the item parameterization must be specified (i.e., which parameters define the item response function; varies among different softwares).</p>
 <div style="
   background-color: rgba(24, 188, 156, 0.1);  /* #18bc9c with 20% opacity */
   border: 1px solid #18bc9c;
@@ -204,7 +204,7 @@ window.Quarto = {
       <div class="form-check">
         <input class="form-check-input" type="radio" name="optionsRadios" id="param2" value="IRTparam">
         <label class="form-check-label" for="param2">
-           `classic` IRT Parameterization
+           Classic IRT Parameterization
         </label>
       </div>
 
@@ -257,7 +257,7 @@ window.Quarto = {
       <div class="accordion-body">
         <p>
           The survey/test is generated using the <code>mirtCAT::mirtCAT()</code> function with the following inputs: 
-          <code>criteria = "MI"</code> or <code>criteria = "Drule"</code> for unidimensional and multidimensional test srespectively, 
+          <code>criteria = "MI"</code> or <code>criteria = "Drule"</code> for unidimensional and multidimensional tests respectively, 
           <code>start_item = "MI"</code> for first item selection, and <code>method = "EAP"</code> for ability estimation.
           If you want to use different values <strong> only for these three arguments</strong>, please specify them as an R list below:
         </p>
@@ -345,6 +345,21 @@ function submitCAT() {
     .catch(err => alert("Error: " + err));
 } //function ends
 </script>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the two examples, configuration files have already been created.</p>
+<p>For the TCAT, a fixed-length CAT of 10 items was set up and the item bank was calibrated using a 2PL model.</p>
+<p>For the PPSE, a variable-length CAT with stopping rule <span class="math inline">\(SE(\hat\theta) = 0.3\)</span> was set up and the item bank was calibrated using a graded response model.</p>
+</div>
+</div>
 
 
 

@@ -6,7 +6,7 @@ title: ""
 
 This procedure shows you how to use webCAT using either your own item bank, **or** one of the two item banks that are offered as examples. These include:
 
-1.  a 36 maximum-performance item bank named TCAT, for an Dutch-English Vocabulary test with dichotomous items calibrated using a 2-parameter logistic model
+1.  a 36 maximum-performance item bank named TCAT, for Dutch-English Vocabulary test with dichotomous items calibrated using a two-parameter logistic model
 
 2.  a 19 typical-performance item bank of the PROMIS Pediatric Psychological Stress Experiences (PPSE) questionnaire (self-report; 8-17yrs old; see [Bevans et al., 2018](https://doi.org/10.1093/jpepsy/jsy010)), with 19 polytomous items, calibrated using a graded response model.
 

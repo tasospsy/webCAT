@@ -188,11 +188,11 @@ window.Quarto = {
 <li><p>The first column, labelled <code>ItemLabel</code>, must contain the item labels.</p></li>
 <li><p>The second column, labelled <code>Item</code>, must contain the item stems.</p></li>
 <li><p>The next columns must contain the response options, labeled <code>Choice1</code>, <code>Choice2</code>, and so on, up to the number of available choices.<br>
-<strong>Note:</strong> In this version, all items must have the same number of response options.</p></li>
+<strong>Note:</strong> All items must have the same number of response options.</p></li>
 <li><p>The next column, labelled <code>Scores</code>, must contain the item scores.&nbsp;A possible format for a dichotomous item with 4 response options could be <code>0100</code> indicating that the second response option is scored as 1 (e.g., correct answer).&nbsp;For polytomous items the scores should range from <code>0</code> up to the total number of categories minus 1, e.g., <code>0123</code> for 4 response options.</p></li>
 <li><p>The next columns contain the items’ discrimination (slope) parameters.<br>
 For <span class="math inline">\(l\)</span> dimensions, <span class="math inline">\(l\)</span> columns are required, labelled <code>a1</code>, <code>a2</code>, etc. For a unidimensional structure, there is only one parameter, and therefore one column labelled <code>a1.</code></p></li>
-<li><p>The next column, labelled <code>d</code>, contains the items’ difficulty (location or intercept) parameters.</p></li>
+<li><p>The next column, labelled <code>d</code>, contains the items’ difficulty parameters (also known as “location” or “intercept”) .</p></li>
 </ul>
 </div>
 </div>
@@ -282,7 +282,6 @@ async function sendData() {
   }
 }
 </script>
-<hr>
 
 
 
