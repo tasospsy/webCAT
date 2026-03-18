@@ -3,3 +3,5 @@
 .DS_Store
 .Rhistory
 /.quarto/
+draft.qmd
+docs/draft.html
