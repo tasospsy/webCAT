@@ -1,5 +1,5 @@
 ---
-title: "Step 4: Results"
+title: "Get Results"
 ---
 
 Enter the Test Name and the Access Token to get the results.\
@@ -8,14 +8,22 @@ You can also filter by date.
 ```{=html}
 <script>
 function downloadData() {
-  const key = document.getElementById("floatingPassword").value;
+  const token = document.getElementById("AccessToken").value;
   
   const params = {
     catName: document.getElementById("catNameInput").value,
     from: document.getElementById("fromDateInput").value,
     to: document.getElementById("toDateInput").value,
   };
-    if (!key || !params.catName) {
+  const ResultsFileName = params.catName + "-results.csv";
+  
+  //Qualtrics part 
+  const qualtrics = {
+    surveyName: document.getElementById("surveyNameInput").value,
+    qualtricsToken : document.getElementById("qualtricsToken").value;
+  };
+  
+  if (!token || !params.catName) {
   alert("Please fill in all required fields: Access Token & Test Name.");
     }
   
@@ -24,7 +32,7 @@ function downloadData() {
   //console.log(url) //debug
   fetch(url, {
     method: "GET",
-    headers: {"x-api-key": key   
+    headers: {"x-api-key": token   
         }
     })
     .then(response => {
@@ -37,7 +45,7 @@ function downloadData() {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = "results.csv";   // <-- file name for the download
+        a.download = ResultsFileName;   // <-- file name for the download
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -58,16 +66,17 @@ function downloadData() {
 ">
   <div class="d-flex gap-3 mt-1">
   <!-- 1st row -->
-  <fieldset class="flex-fill">
-    <div class="form-floating">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Access Token" autocomplete="off">
-    <label for="floatingPassword">Access Token*</label>
-    </div>
-  </fieldset>
-  <fieldset class="flex-fill">
+   <fieldset class="flex-fill">
     <div class="form-floating">
     <input type="text" class="form-control" id="catNameInput" placeholder="CAT Name">
     <label for="catNameInput">Test Name*</label>
+    </div>
+  </fieldset>
+  
+  <fieldset class="flex-fill">
+    <div class="form-floating">
+    <input type="password" class="form-control" id="AccessToken" placeholder="Access Token" autocomplete="off">
+    <label for="AccessToken">Access Token*</label>
     </div>
   </fieldset>
  
@@ -85,6 +94,7 @@ function downloadData() {
     <input type="date" class="form-control" id="fromDateInput" name="from" placeholder="">
     </div>
   </fieldset>
+  
   <fieldset class="flex-fill">
     <div>
     <label class="col-form-label" for="toDateInput">To Date</label>
