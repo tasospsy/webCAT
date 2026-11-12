@@ -2,7 +2,7 @@
 title: ""
 bibliography: references.bib
 nocite: |
-  @Psychogyiopoulos_etal_2026_Qualtrics, @Chalmers_2012_mirt, @Chalmers_2016_mirtCAT
+  @Psychogyiopoulos_etal_2026_Qualtrics, @Chalmers_2012_mirt, @Chalmers_2016_mirtCAT, @Booij_etal_2026_prereg
 ---
 
 ## How to cite
@@ -10,20 +10,19 @@ nocite: |
 If you use this application in your research, please cite:
 
 ::: callout-note
-Psychogyiopoulos, A., Smits, N., Booij, G. J., & van der Ark, L. A. (2026).
-*Implementing computerized adaptive testing in Qualtrics: Why, how, and an
-online tutorial for researchers* [Manuscript submitted for publication].
+Psychogyiopoulos, A., Smits, N., Booij, G. J., & van der Ark, L. A. (2026). *Computerized Adaptive Testing in Qualtrics: An Online Tutorial for Researchers* \[Manuscript submitted for publication\].
 :::
 
 <details>
+
 <summary>BibTeX</summary>
 
-```bibtex
+``` bibtex
 @unpublished{Psychogyiopoulos_etal_2026_Qualtrics,
   author   = {Psychogyiopoulos, Anastasios and Smits, Niels and Booij, Goan J. and {van der Ark}, L. Andries},
   date     = {2026},
-  title    = {Implementing Computerized Adaptive Testing in {Qualtrics}},
-  subtitle = {Why, How, and an Online Tutorial for Researchers},
+  title    = {Computerized Adaptive Testing in {Qualtrics}},
+  subtitle = {An Online Tutorial for Researchers},
   pubstate = {submitted},
   note     = {Manuscript submitted for publication}
 }
@@ -33,10 +32,7 @@ online tutorial for researchers* [Manuscript submitted for publication].
 
 ## Acknowledgements
 
-This application is built on the R packages **mirt** [@Chalmers_2012_mirt]
-and **mirtCAT** [@Chalmers_2016_mirtCAT], which provide the item response
-theory estimation and adaptive testing engine behind it. We thank their
-author for making them openly available.
+This application is built on the R packages **mirt** [@Chalmers_2012_mirt] and **mirtCAT** [@Chalmers_2016_mirtCAT], which provide the item response theory estimation and adaptive testing engine behind it. We thank their author for making them openly available.
 
 ## Bibliography
 
